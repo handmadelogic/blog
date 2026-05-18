@@ -1,78 +1,30 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getAllCategories, getPostsByCategory } from '@/lib/posts';
+import { CRAFTS, getCraft } from '@/lib/crafts';
+import { getPostsByCategory } from '@/lib/posts';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
-/* Same palette as the crafts index */
-const categoryMeta: Record<string, { gradient: string; accent: string; tagline: string }> = {
-  'knitting': {
-    gradient: 'linear-gradient(135deg, rgb(229,143,184) 0%, rgb(201,52,126) 100%)',
-    accent: 'rgb(178,28,103)',
-    tagline: 'Yarn, needles, and the occasional unravelling.',
-  },
-  'polymer-clay': {
-    gradient: 'linear-gradient(135deg, rgb(181,197,165) 0%, rgb(122,148,104) 100%)',
-    accent: 'rgb(122,148,104)',
-    tagline: 'Small things, big satisfaction.',
-  },
-  'crochet': {
-    gradient: 'linear-gradient(135deg, rgb(181,197,165) 0%, rgb(92,45,82) 100%)',
-    accent: 'rgb(92,45,82)',
-    tagline: 'Hooks and loops and little creatures.',
-  },
-  'wood': {
-    gradient: 'linear-gradient(135deg, rgb(240,182,82) 0%, rgb(216,128,24) 100%)',
-    accent: 'rgb(181,86,62)',
-    tagline: 'Sawdust and a healthy overconfidence.',
-  },
-  'paint': {
-    gradient: 'linear-gradient(135deg, rgb(240,204,194) 0%, rgb(181,86,62) 100%)',
-    accent: 'rgb(181,86,62)',
-    tagline: 'Brushes, pigment, and the occasional cat.',
-  },
-  'reno': {
-    gradient: 'linear-gradient(135deg, rgb(240,182,82) 0%, rgb(181,86,62) 100%)',
-    accent: 'rgb(181,86,62)',
-    tagline: 'How hard can it be? (Often very.)',
-  },
-  'embroidery': {
-    gradient: 'linear-gradient(135deg, rgb(229,143,184) 0%, rgb(92,45,82) 100%)',
-    accent: 'rgb(92,45,82)',
-    tagline: 'Tiny stitches, enormous patience.',
-  },
-  'macrame': {
-    gradient: 'linear-gradient(135deg, rgb(240,204,194) 0%, rgb(181,86,62) 100%)',
-    accent: 'rgb(181,86,62)',
-    tagline: 'Mostly knots. Occasional doubt.',
-  },
-};
-
-const defaultMeta = {
-  gradient: 'linear-gradient(135deg, rgb(214,205,184) 0%, rgb(137,112,120) 100%)',
-  accent: 'rgb(112,84,95)',
-  tagline: 'Making things with care.',
-};
-
 export async function generateStaticParams() {
-  return getAllCategories().map((c) => ({ slug: c.slug }));
+  return CRAFTS.map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const posts = getPostsByCategory(slug);
-  if (posts.length === 0) return { title: 'Craft not found · Handmade Logic' };
-  return { title: `${posts[0].category} · Handmade Logic` };
+  const craft = getCraft(slug);
+  if (!craft) return { title: 'Craft not found · Handmade Logic' };
+  return { title: `${craft.name} · Handmade Logic` };
 }
 
 export default async function CraftPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const craft = getCraft(slug);
+
+  /* Unknown slug → proper 404 */
+  if (!craft) notFound();
+
   const posts = getPostsByCategory(slug);
-
-  if (posts.length === 0) notFound();
-
-  const { category, categoryEmoji } = posts[0];
-  const meta = categoryMeta[slug] ?? defaultMeta;
+  const hasPosts = posts.length > 0;
 
   return (
     <>
@@ -81,7 +33,7 @@ export default async function CraftPage({ params }: { params: Promise<{ slug: st
       <div className="w-full">
         <main className="max-w-[1440px] mx-auto px-6 md:px-[90px] pt-12 pb-24 font-nunito">
 
-          {/* Back link */}
+          {/* ── Back link ── */}
           <Link
             href="/crafts"
             data-back-link
@@ -97,7 +49,11 @@ export default async function CraftPage({ params }: { params: Promise<{ slug: st
           {/* ── Category hero banner ── */}
           <div
             className="relative w-full rounded-[20px] overflow-hidden mb-14 flex items-end"
-            style={{ backgroundImage: meta.gradient, minHeight: '220px', boxShadow: 'rgba(42,24,37,0.1) 0px 10px 30px 0px' }}
+            style={{
+              backgroundImage: craft.gradient,
+              minHeight: '220px',
+              boxShadow: 'rgba(42,24,37,0.1) 0px 10px 30px 0px',
+            }}
           >
             {/* Sheen */}
             <div
@@ -105,77 +61,107 @@ export default async function CraftPage({ params }: { params: Promise<{ slug: st
               className="absolute inset-0"
               style={{ backgroundImage: 'radial-gradient(circle at 25% 35%, rgba(255,255,255,0.28), rgba(0,0,0,0) 65%)' }}
             />
-            {/* Large emoji, decorative */}
+            {/* Ghost emoji */}
             <span
               aria-hidden="true"
-              className="absolute right-10 top-1/2 -translate-y-1/2 text-[120px] leading-none opacity-30 select-none"
+              className="absolute right-10 top-1/2 -translate-y-1/2 text-[120px] leading-none opacity-25 select-none"
             >
-              {categoryEmoji}
+              {craft.emoji}
             </span>
             {/* Text */}
             <div className="relative px-8 md:px-12 py-10">
               <div className="inline-flex items-center gap-2 bg-[rgba(246,240,220,0.85)] backdrop-blur-sm px-3 py-1 rounded-full mb-3">
-                <span>{categoryEmoji}</span>
+                <span>{craft.emoji}</span>
                 <span className="text-[12px] font-bold font-nunito tracking-[0.44px] text-[rgb(42,24,37)]">
-                  {category}
+                  {craft.name}
                 </span>
               </div>
               <h1
                 className="font-bold font-lora text-white leading-tight mb-2"
                 style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)', textShadow: 'rgba(42,24,37,0.25) 0px 2px 8px' }}
               >
-                {category}
+                {craft.name}
               </h1>
-              <p className="text-white/80 font-lora italic text-[17px]">{meta.tagline}</p>
+              <p className="text-white/80 font-lora italic text-[17px]">{craft.tagline}</p>
             </div>
           </div>
 
-          {/* ── Post list ── */}
-          <div className="flex flex-col gap-6 max-w-[860px]">
-            {posts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/posts/${post.slug}`}
-                className="group block bg-[rgb(255,250,235)] rounded-[16px] px-8 py-7 transition-transform hover:-translate-y-1"
+          {/* ── Posts or empty state ── */}
+          {hasPosts ? (
+            <div className="flex flex-col gap-6 max-w-[860px]">
+              {posts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/posts/${post.slug}`}
+                  className="group block bg-[rgb(255,250,235)] rounded-[16px] px-8 py-7 transition-transform hover:-translate-y-1"
+                  style={{ boxShadow: 'rgba(42, 24, 37, 0.07) 0px 6px 24px 0px' }}
+                >
+                  {/* Category pill */}
+                  <div
+                    className="inline-flex items-center gap-1.5 text-[12px] font-bold font-nunito tracking-[0.44px] bg-[rgb(241,236,220)] px-3 py-1 rounded-full mb-3"
+                    style={{ color: craft.accent }}
+                  >
+                    <span>{post.categoryEmoji}</span>
+                    <span>{post.category}</span>
+                  </div>
+
+                  {/* Title */}
+                  <h2
+                    className="font-semibold font-lora text-[rgb(42,24,37)] group-hover:text-[rgb(178,28,103)] leading-snug mb-2 transition-colors"
+                    style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)' }}
+                  >
+                    {post.title}
+                  </h2>
+
+                  {/* Excerpt */}
+                  <p className="text-[rgb(90,61,82)] text-[15px] font-nunito leading-relaxed mb-4">
+                    {post.excerpt}
+                  </p>
+
+                  {/* Meta */}
+                  <div className="flex items-center gap-3 text-[rgb(112,84,95)] text-[12px] font-nunito">
+                    <span>
+                      {new Date(post.date).toLocaleDateString('en-US', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}
+                    </span>
+                    <span className="w-1 h-1 bg-[rgb(112,84,95)] rounded-full" aria-hidden="true" />
+                    <span>{post.readingMins} min read</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            /* ── Empty state ── */
+            <div className="max-w-[540px]">
+              <div
+                className="bg-[rgb(255,250,235)] rounded-[20px] px-10 py-12 text-center"
                 style={{ boxShadow: 'rgba(42, 24, 37, 0.07) 0px 6px 24px 0px' }}
               >
-                {/* Category pill */}
-                <div
-                  className="inline-flex items-center gap-1.5 text-[12px] font-bold font-nunito tracking-[0.44px] bg-[rgb(241,236,220)] px-3 py-1 rounded-full mb-3"
-                  style={{ color: meta.accent }}
-                >
-                  <span>{post.categoryEmoji}</span>
-                  <span>{post.category}</span>
-                </div>
-
-                {/* Title */}
-                <h2
-                  className="font-semibold font-lora text-[rgb(42,24,37)] group-hover:text-[rgb(178,28,103)] leading-snug mb-2 transition-colors"
-                  style={{ fontSize: 'clamp(1.1rem, 2vw, 1.5rem)' }}
-                >
-                  {post.title}
+                <span className="text-[56px] leading-none block mb-5" role="img" aria-label={craft.name}>
+                  {craft.emoji}
+                </span>
+                <h2 className="font-bold font-lora text-[rgb(42,24,37)] text-[24px] leading-snug mb-3">
+                  Nothing here yet
                 </h2>
-
-                {/* Excerpt */}
-                <p className="text-[rgb(90,61,82)] text-[15px] font-nunito leading-relaxed mb-4">
-                  {post.excerpt}
+                <p className="text-[rgb(90,61,82)] font-lora italic text-[16px] leading-[1.7] mb-6">
+                  I&apos;m working on it — this shelf will fill up soon. Check back or browse another craft in the meantime.
                 </p>
-
-                {/* Meta */}
-                <div className="flex items-center gap-3 text-[rgb(112,84,95)] text-[12px] font-nunito">
-                  <span>
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      month: 'long',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}
-                  </span>
-                  <span className="w-1 h-1 bg-[rgb(112,84,95)] rounded-full" aria-hidden="true" />
-                  <span>{post.readingMins} min read</span>
-                </div>
-              </Link>
-            ))}
-          </div>
+                <p className="text-[rgb(216,128,24)] font-caveat text-[22px] font-semibold mb-8">
+                  something&apos;s brewing ✿
+                </p>
+                <Link
+                  href="/crafts"
+                  className="inline-flex items-center gap-2 bg-[rgb(92,45,82)] text-[rgb(246,240,220)] px-6 py-3 text-[13px] font-bold font-nunito rounded-full"
+                  data-btn="true"
+                >
+                  Browse all crafts →
+                </Link>
+              </div>
+            </div>
+          )}
 
         </main>
       </div>

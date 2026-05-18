@@ -1,59 +1,10 @@
 import Link from 'next/link';
-import { getAllCategories } from '@/lib/posts';
+import { CRAFTS } from '@/lib/crafts';
+import { getAllPosts } from '@/lib/posts';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
 export const metadata = { title: 'Browse by Craft · Handmade Logic' };
-
-/* Per-category colour palette — extend as new crafts appear */
-const categoryMeta: Record<string, { gradient: string; accent: string; tagline: string }> = {
-  'knitting': {
-    gradient: 'linear-gradient(135deg, rgb(229,143,184) 0%, rgb(201,52,126) 100%)',
-    accent: 'rgb(178,28,103)',
-    tagline: 'Yarn, needles, and the occasional unravelling.',
-  },
-  'polymer-clay': {
-    gradient: 'linear-gradient(135deg, rgb(181,197,165) 0%, rgb(122,148,104) 100%)',
-    accent: 'rgb(122,148,104)',
-    tagline: 'Small things, big satisfaction.',
-  },
-  'crochet': {
-    gradient: 'linear-gradient(135deg, rgb(181,197,165) 0%, rgb(92,45,82) 100%)',
-    accent: 'rgb(92,45,82)',
-    tagline: 'Hooks and loops and little creatures.',
-  },
-  'wood': {
-    gradient: 'linear-gradient(135deg, rgb(240,182,82) 0%, rgb(216,128,24) 100%)',
-    accent: 'rgb(181,86,62)',
-    tagline: 'Sawdust and a healthy overconfidence.',
-  },
-  'paint': {
-    gradient: 'linear-gradient(135deg, rgb(240,204,194) 0%, rgb(181,86,62) 100%)',
-    accent: 'rgb(181,86,62)',
-    tagline: 'Brushes, pigment, and the occasional cat.',
-  },
-  'reno': {
-    gradient: 'linear-gradient(135deg, rgb(240,182,82) 0%, rgb(181,86,62) 100%)',
-    accent: 'rgb(181,86,62)',
-    tagline: 'How hard can it be? (Often very.)',
-  },
-  'embroidery': {
-    gradient: 'linear-gradient(135deg, rgb(229,143,184) 0%, rgb(92,45,82) 100%)',
-    accent: 'rgb(92,45,82)',
-    tagline: 'Tiny stitches, enormous patience.',
-  },
-  'macrame': {
-    gradient: 'linear-gradient(135deg, rgb(240,204,194) 0%, rgb(181,86,62) 100%)',
-    accent: 'rgb(181,86,62)',
-    tagline: 'Mostly knots. Occasional doubt.',
-  },
-};
-
-const defaultMeta = {
-  gradient: 'linear-gradient(135deg, rgb(214,205,184) 0%, rgb(137,112,120) 100%)',
-  accent: 'rgb(112,84,95)',
-  tagline: 'Making things with care.',
-};
 
 /* Slight alternating tilts — same family as the homepage post cards */
 const rotations = [
@@ -66,7 +17,14 @@ const rotations = [
 ];
 
 export default function CraftsPage() {
-  const categories = getAllCategories();
+  const allPosts = getAllPosts();
+
+  /* Count real posts per craft slug */
+  const postCount = new Map<string, number>();
+  for (const post of allPosts) {
+    const slug = post.category.toLowerCase().replace(/\s+/g, '-');
+    postCount.set(slug, (postCount.get(slug) ?? 0) + 1);
+  }
 
   return (
     <>
@@ -106,51 +64,52 @@ export default function CraftsPage() {
           </div>
 
           {/* ── Craft grid ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {categories.map((cat, i) => {
-              const meta = categoryMeta[cat.slug] ?? defaultMeta;
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
+            {CRAFTS.map((craft, i) => {
+              const count = postCount.get(craft.slug) ?? 0;
               const rotate = rotations[i % rotations.length];
 
               return (
-                <Link key={cat.slug} href={`/crafts/${cat.slug}`}>
+                <Link key={craft.slug} href={`/crafts/${craft.slug}`}>
                   <article
                     data-card-lift="true"
-                    className="cursor-pointer"
+                    className="cursor-pointer h-full"
                     style={{ transform: rotate }}
                   >
                     <div
-                      className="bg-[rgb(255,250,235)] rounded-[16px] p-4"
+                      className="bg-[rgb(255,250,235)] rounded-[16px] p-4 h-full"
                       style={{ boxShadow: 'rgba(42, 24, 37, 0.1) 0px 10px 30px 0px, rgba(42, 24, 37, 0.05) 0px 2px 6px 0px' }}
                     >
                       {/* Colour swatch + emoji */}
                       <div
-                        className="relative w-full h-[200px] sm:h-[220px] overflow-hidden rounded-lg flex items-center justify-center"
-                        style={{ backgroundImage: meta.gradient }}
+                        className="relative w-full h-[160px] overflow-hidden rounded-lg flex items-center justify-center mb-0"
+                        style={{ backgroundImage: craft.gradient }}
                       >
                         <div
                           aria-hidden="true"
                           className="absolute inset-0"
                           style={{ backgroundImage: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.25), rgba(0,0,0,0) 60%)' }}
                         />
-                        <span className="text-[72px] leading-none drop-shadow" role="img" aria-label={cat.category}>
-                          {cat.categoryEmoji}
+                        <span className="text-[64px] leading-none drop-shadow" role="img" aria-label={craft.name}>
+                          {craft.emoji}
                         </span>
+
                         {/* Post count pill */}
                         <div
                           className="absolute top-3 right-3 bg-[rgb(246,240,220)] text-[11px] font-bold tracking-[0.44px] px-3 py-1 rounded-full"
-                          style={{ color: meta.accent }}
+                          style={{ color: count > 0 ? craft.accent : 'rgb(137,112,120)' }}
                         >
-                          {cat.count} {cat.count === 1 ? 'post' : 'posts'}
+                          {count > 0 ? `${count} ${count === 1 ? 'post' : 'posts'}` : 'coming soon'}
                         </div>
                       </div>
 
                       {/* Text */}
-                      <div className="pt-5 px-2 pb-2">
-                        <h2 className="text-[rgb(42,24,37)] text-[26px] font-semibold font-lora leading-tight tracking-[-0.26px] mb-1">
-                          {cat.category}
+                      <div className="pt-4 px-2 pb-2">
+                        <h2 className="text-[rgb(42,24,37)] text-[22px] font-semibold font-lora leading-tight tracking-[-0.22px] mb-1">
+                          {craft.name}
                         </h2>
-                        <p className="text-[rgb(90,61,82)] text-[14px] font-nunito leading-relaxed">
-                          {meta.tagline}
+                        <p className="text-[rgb(90,61,82)] text-[13px] font-nunito leading-relaxed">
+                          {craft.tagline}
                         </p>
                       </div>
                     </div>
@@ -159,13 +118,6 @@ export default function CraftsPage() {
               );
             })}
           </div>
-
-          {/* Empty state */}
-          {categories.length === 0 && (
-            <p className="text-[rgb(112,84,95)] font-caveat text-[22px] text-center mt-20">
-              Nothing on the shelves yet — check back soon ✿
-            </p>
-          )}
 
         </main>
       </div>
