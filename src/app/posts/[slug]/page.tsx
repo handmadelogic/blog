@@ -91,6 +91,28 @@ function Quip({ children, side = 'right' }: { children: React.ReactNode; side?: 
             width: '190px',
           }}
         >
+          {/* Speech bubble — tail points DOWN toward the portrait */}
+          <div className="relative w-full">
+            {/* Bubble body */}
+            <div
+              className="bg-[rgb(255,250,235)] rounded-2xl px-4 py-3 text-[14px] font-caveat text-[rgb(42,24,37)] leading-snug"
+              style={{ boxShadow: 'rgba(42,24,37,0.12) 1px 3px 12px 0px' }}
+            >
+              {children}
+            </div>
+            {/* Tail pointing down toward the portrait */}
+            <svg
+              viewBox="0 0 20 12"
+              width="20"
+              height="12"
+              className="absolute -bottom-[10px] left-1/2 -translate-x-1/2"
+              fill="rgb(255,250,235)"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0,0 L20,0 L10,12 Z" />
+            </svg>
+          </div>
+
           {/* Cartoon portrait — the speaker */}
           <div
             className="relative w-[72px] h-[72px] rounded-full border-2 border-dashed border-[rgba(201,52,126,0.35)] bg-[rgb(246,240,220)] flex items-center justify-center overflow-hidden"
@@ -104,28 +126,6 @@ function Quip({ children, side = 'right' }: { children: React.ReactNode; side?: 
             <span className="absolute bottom-1 text-[8px] font-caveat text-[rgb(201,52,126)] opacity-50">
               me
             </span>
-          </div>
-
-          {/* Speech bubble — tail points UP toward the portrait */}
-          <div className="relative w-full">
-            {/* Tail pointing up toward the portrait */}
-            <svg
-              viewBox="0 0 20 12"
-              width="20"
-              height="12"
-              className="absolute -top-[10px] left-1/2 -translate-x-1/2"
-              fill="rgb(255,250,235)"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0,12 L20,12 L10,0 Z" />
-            </svg>
-            {/* Bubble body */}
-            <div
-              className="bg-[rgb(255,250,235)] rounded-2xl px-4 py-3 text-[14px] font-caveat text-[rgb(42,24,37)] leading-snug"
-              style={{ boxShadow: 'rgba(42,24,37,0.12) 1px 3px 12px 0px' }}
-            >
-              {children}
-            </div>
           </div>
         </aside>
       </div>
