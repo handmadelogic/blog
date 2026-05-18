@@ -195,6 +195,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     >
       <Nav />
 
+      {/* Off-white content area — nav keeps the dotted beige, body gets a clean canvas */}
+      <div className="bg-[rgb(252,250,246)]">
       <main className="w-full px-6 md:px-[90px] xl:px-[120px] pt-12 pb-24">
         {/* Back link */}
         <Link
@@ -254,6 +256,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       </main>
 
       <Footer />
+      </div>
     </div>
   );
 }
