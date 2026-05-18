@@ -12,7 +12,7 @@ export default function PostsPage() {
     <>
       <Nav />
 
-      <div className="w-full bg-[rgb(252,250,246)]">
+      <div className="w-full">
         <main className="max-w-[1440px] mx-auto px-6 md:px-[90px] pt-16 pb-24 font-nunito">
           {/* Header */}
           <div className="mb-14">
@@ -69,7 +69,7 @@ export default function PostsPage() {
         </main>
       </div>
 
-      <Footer waveColor="rgb(252,250,246)" />
+      <Footer />
     </>
   );
 }

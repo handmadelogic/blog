@@ -193,8 +193,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     <>
       <Nav />
 
-      {/* Off-white full-bleed canvas; html provides the dotted beige for the nav band */}
-      <div className="w-full bg-[rgb(252,250,246)]">
+      <div className="w-full">
       <main className="max-w-[1440px] mx-auto px-6 md:px-[90px] xl:px-[120px] pt-12 pb-24">
         {/* Back link */}
         <Link
@@ -209,8 +208,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           All posts
         </Link>
 
-        {/* Article — the quips escape out of this via overflow:visible */}
-        <article aria-labelledby="post-title" className="relative max-w-[640px] xl:max-w-[700px] 2xl:max-w-[780px] mx-auto overflow-visible">
+        {/* Article — card sits on the dotted beige; quips escape via overflow:visible */}
+        <article
+          aria-labelledby="post-title"
+          className="relative max-w-[640px] xl:max-w-[700px] 2xl:max-w-[780px] mx-auto overflow-visible bg-[rgb(255,250,235)] rounded-[20px] px-8 md:px-12 py-10 md:py-12"
+          style={{ boxShadow: 'rgba(42, 24, 37, 0.07) 0px 6px 24px 0px' }}
+        >
           {/* Category */}
           <div className="inline-flex items-center gap-1.5 text-[12px] font-bold font-nunito tracking-[0.44px] bg-[rgb(240,182,82)] text-[rgb(42,24,37)] px-3 py-1 rounded-full mb-6">
             <span>{post.categoryEmoji}</span>
@@ -256,7 +259,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       </main>
 
       </div>
-      <Footer waveColor="rgb(252,250,246)" />
+      <Footer />
     </>
   );
 }
