@@ -201,7 +201,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         {/* Back link */}
         <Link
           href="/posts"
-          className="inline-flex items-center gap-2 text-[rgb(112,84,95)] text-[14px] font-semibold font-nunito mb-10 hover:text-[rgb(42,24,37)] transition-colors"
+          data-back-link
+          className="inline-flex items-center gap-2 text-[rgb(112,84,95)] text-[14px] font-semibold font-nunito mb-10"
         >
           <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none">
             <path d="M19,12 L5,12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -243,7 +244,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <div className="mt-16 pt-8 border-t border-[rgba(42,24,37,0.1)] clear-both">
             <Link
               href="/posts"
-              className="inline-flex items-center gap-2 text-[rgb(178,28,103)] text-[15px] font-bold font-nunito hover:underline"
+              data-back-link
+              className="inline-flex items-center gap-2 text-[rgb(178,28,103)] text-[15px] font-bold font-nunito"
             >
               <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none">
                 <path d="M19,12 L5,12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
