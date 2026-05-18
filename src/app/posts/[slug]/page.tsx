@@ -206,7 +206,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </Link>
 
         {/* Article — the quips escape out of this via overflow:visible */}
-        <article aria-labelledby="post-title" className="relative max-w-[640px] mx-auto overflow-visible">
+        <article aria-labelledby="post-title" className="relative max-w-[640px] xl:max-w-[700px] 2xl:max-w-[780px] mx-auto overflow-visible">
           {/* Category */}
           <div className="inline-flex items-center gap-1.5 text-[12px] font-bold font-nunito tracking-[0.44px] bg-[rgb(240,182,82)] text-[rgb(42,24,37)] px-3 py-1 rounded-full mb-6">
             <span>{post.categoryEmoji}</span>
@@ -252,7 +252,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       </main>
 
       </div>
-      <Footer />
+      <Footer waveColor="rgb(252,250,246)" />
     </>
   );
 }

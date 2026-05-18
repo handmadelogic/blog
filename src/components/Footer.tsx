@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
-export default function Footer() {
+export default function Footer({ waveColor = 'rgb(241,236,220)' }: { waveColor?: string }) {
   return (
     <footer className="relative w-full -mt-[2px] bg-[rgb(42,24,37)] text-[rgb(246,240,220)] font-nunito">
       {/* Scalloped top wave — full bleed */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 32" preserveAspectRatio="none" className="absolute -top-[4px] left-0 w-full h-[35px] pointer-events-none">
-        <path d="M0,32 C40,2 80,2 120,32 C160,2 200,2 240,32 C280,2 320,2 360,32 C400,2 440,2 480,32 C520,2 560,2 600,32 C640,2 680,2 720,32 C760,2 800,2 840,32 C880,2 920,2 960,32 C1000,2 1040,2 1080,32 C1120,2 1160,2 1200,32 C1240,2 1280,2 1320,32 C1360,2 1400,2 1440,32 L1440,0 L0,0 Z" fill="rgb(237,233,222)" />
+        <path d="M0,32 C40,2 80,2 120,32 C160,2 200,2 240,32 C280,2 320,2 360,32 C400,2 440,2 480,32 C520,2 560,2 600,32 C640,2 680,2 720,32 C760,2 800,2 840,32 C880,2 920,2 960,32 C1000,2 1040,2 1080,32 C1120,2 1160,2 1200,32 C1240,2 1280,2 1320,32 C1360,2 1400,2 1440,32 L1440,0 L0,0 Z" fill={waveColor} />
       </svg>
 
       {/* Inner content capped at 1440px */}
