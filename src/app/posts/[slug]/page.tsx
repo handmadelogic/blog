@@ -95,11 +95,11 @@ function Quip({ children, side = 'right' }: { children: React.ReactNode; side?: 
           }}
         >
           {/* Speech bubble — tail points DOWN toward the portrait */}
-          <div className="relative w-full">
+          <div className="relative w-full" style={{ transform: 'matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, 0)' }}>
             {/* Bubble body */}
             <div
-              className="bg-[rgb(255,250,235)] rounded-2xl px-4 py-3 text-[14px] font-caveat text-[rgb(42,24,37)] leading-snug"
-              style={{ boxShadow: 'rgba(42,24,37,0.12) 1px 3px 12px 0px' }}
+              className="bg-[rgb(255,250,235)] rounded-[18px] px-[18px] py-[14px] text-[20px] font-semibold font-caveat text-[rgb(42,24,37)] leading-[26px]"
+              style={{ boxShadow: 'rgba(42, 24, 37, 0.1) 0px 4px 14px 0px' }}
             >
               {children}
             </div>
@@ -135,7 +135,11 @@ function Quip({ children, side = 'right' }: { children: React.ReactNode; side?: 
       </div>
 
       {/* ── Mobile / tablet: inline speech bubble ── */}
-      <aside aria-label="Author's aside" className="xl:hidden my-6 clear-both flex items-start gap-3 bg-[rgb(255,250,235)] rounded-2xl px-4 py-3" style={{ boxShadow: 'rgba(42,24,37,0.1) 1px 3px 10px 0px' }}>
+      <aside
+        aria-label="Author's aside"
+        className="xl:hidden my-6 clear-both flex items-start gap-3 bg-[rgb(255,250,235)] rounded-[18px] px-[18px] py-[14px]"
+        style={{ boxShadow: 'rgba(42, 24, 37, 0.1) 0px 4px 14px 0px', transform: 'matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, 0)' }}
+      >
         {/* Mini portrait — decorative */}
         <div aria-hidden="true" className="shrink-0 w-10 h-10 rounded-full border-2 border-dashed border-[rgba(201,52,126,0.35)] bg-[rgb(246,240,220)] flex items-center justify-center overflow-hidden">
           <svg viewBox="0 0 60 80" width="22" height="30" fill="none">
@@ -143,7 +147,7 @@ function Quip({ children, side = 'right' }: { children: React.ReactNode; side?: 
             <path d="M10,80 C12,56 20,46 30,46 C40,46 48,56 50,80 Z" fill="rgb(201,52,126)" opacity="0.25" />
           </svg>
         </div>
-        <p className="font-caveat text-[rgb(42,24,37)] text-[15px] leading-snug pt-1">{children}</p>
+        <p className="font-semibold font-caveat text-[rgb(42,24,37)] text-[18px] leading-[24px] pt-1">{children}</p>
       </aside>
     </>
   );
