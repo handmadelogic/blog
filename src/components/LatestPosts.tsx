@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 function CardMeta({ date, mins }: { date: string; mins: number }) {
   return (
     <div className="flex items-center gap-2 text-[rgb(137,112,120)] text-[12px] font-nunito">
@@ -29,15 +31,16 @@ export default function LatestPosts() {
           </h2>
           <p className="hidden md:block absolute -top-7 -left-2 text-[rgb(137,112,120)] text-[20px] font-semibold font-caveat" style={{transform: 'matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)'}}>✦ what I&apos;ve been up to</p>
         </div>
-        <a href="#" data-link="true" className="relative shrink-0 text-[rgb(42,24,37)] pb-1 text-[14px] font-bold font-nunito border-b-2 border-dashed border-[rgb(201,52,126)] cursor-pointer">
+        <Link href="/posts" data-link="true" className="relative shrink-0 text-[rgb(42,24,37)] pb-1 text-[14px] font-bold font-nunito border-b-2 border-dashed border-[rgb(201,52,126)]">
           read everything →
-        </a>
+        </Link>
       </div>
 
       {/* Featured + sidebar */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 mb-14">
 
         {/* Featured article */}
+        <Link href="/posts/knitting-a-sweater">
         <article data-card-lift="true" className="relative cursor-pointer" style={{transform: 'matrix(0.999848, -0.0174524, 0.0174524, 0.999848, 0, 0)'}}>
           <p className="hidden md:block absolute -top-2 -right-12 text-[rgb(201,52,126)] text-[22px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)'}}>← my favorite this month ♡</p>
           <div className="bg-[rgb(255,250,235)] rounded-[12px] p-4" style={{boxShadow: 'rgba(42, 24, 37, 0.1) 0px 10px 30px 0px, rgba(42, 24, 37, 0.05) 0px 2px 6px 0px'}}>
@@ -58,11 +61,13 @@ export default function LatestPosts() {
             </div>
           </div>
         </article>
+        </Link>
 
         {/* Sidebar: 2 smaller cards stacked */}
         <div className="flex flex-col gap-7 lg:w-[508px]">
           {[
             {
+              href: '/posts/tiny-mushroom-earrings',
               gradient: 'linear-gradient(135deg, rgb(181, 197, 165) 0%, rgb(122, 148, 104) 100%)',
               category: '🌸 Polymer clay', categoryColor: 'rgb(122,148,104)',
               title: 'Tiny mushroom earrings at 11pm.',
@@ -71,6 +76,7 @@ export default function LatestPosts() {
               rotate: 'matrix(0.999657, 0.0261769, -0.0261769, 0.999657, 0, 0)',
             },
             {
+              href: '#',
               gradient: 'linear-gradient(135deg, rgb(240, 182, 82) 0%, rgb(216, 128, 24) 100%)',
               category: '🪵 Wood', categoryColor: 'rgb(216,128,24)',
               title: 'A shelf. Level. Proud.',
@@ -79,7 +85,8 @@ export default function LatestPosts() {
               rotate: 'matrix(0.999903, -0.0139622, 0.0139622, 0.999903, 0, 0)',
             },
           ].map((card) => (
-            <article key={card.title} data-card-lift="true" className="cursor-pointer" style={{transform: card.rotate}}>
+            <Link key={card.title} href={card.href}>
+            <article data-card-lift="true" className="cursor-pointer" style={{transform: card.rotate}}>
               <div className="bg-[rgb(255,250,235)] rounded-[12px] p-4" style={{boxShadow: 'rgba(42, 24, 37, 0.1) 0px 10px 30px 0px, rgba(42, 24, 37, 0.05) 0px 2px 6px 0px'}}>
                 <div className="relative w-full h-[160px] sm:h-[200px] lg:h-[220px] overflow-hidden rounded-lg" style={{backgroundImage: card.gradient}}>
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0) 60%)'}} />
@@ -92,6 +99,7 @@ export default function LatestPosts() {
                 </div>
               </div>
             </article>
+            </Link>
           ))}
         </div>
       </div>
@@ -100,6 +108,7 @@ export default function LatestPosts() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9">
         {[
           {
+            href: '#',
             gradient: 'linear-gradient(135deg, rgb(181, 197, 165) 0%, rgb(92, 45, 82) 100%)',
             category: '🧵 Crochet', categoryColor: 'rgb(92,45,82)',
             title: 'Gerald the frog, in 47 rounds.',
@@ -109,6 +118,7 @@ export default function LatestPosts() {
             annotation: null,
           },
           {
+            href: '#',
             gradient: 'linear-gradient(135deg, rgb(240, 204, 194) 0%, rgb(181, 86, 62) 100%)',
             category: '🎨 Paint', categoryColor: 'rgb(181,86,62)',
             title: 'Watercolour florals (with cat assistance).',
@@ -118,6 +128,7 @@ export default function LatestPosts() {
             annotation: 'made me cry happy tears',
           },
           {
+            href: '#',
             gradient: 'linear-gradient(135deg, rgb(240, 182, 82) 0%, rgb(181, 86, 62) 100%)',
             category: '🔨 Reno', categoryColor: 'rgb(216,128,24)',
             title: "Tiling a backsplash. Day 1 of 'how hard can it be'.",
@@ -127,7 +138,8 @@ export default function LatestPosts() {
             annotation: null,
           },
         ].map((card) => (
-          <article key={card.title} data-card-lift="true" className="relative cursor-pointer" style={{transform: card.rotate}}>
+          <Link key={card.title} href={card.href}>
+          <article data-card-lift="true" className="relative cursor-pointer h-full" style={{transform: card.rotate}}>
             {card.annotation && (
               <p className="hidden md:block absolute -top-2 -right-12 text-[rgb(122,148,104)] text-[22px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)'}}>
                 {card.annotation}
@@ -145,6 +157,7 @@ export default function LatestPosts() {
               </div>
             </div>
           </article>
+          </Link>
         ))}
       </div>
 

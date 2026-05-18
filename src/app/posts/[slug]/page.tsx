@@ -186,18 +186,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   });
 
   return (
-    <div
-      className="w-full max-w-[1440px] mx-auto bg-[rgb(241,236,220)]"
-      style={{
-        backgroundImage: 'radial-gradient(circle, rgba(42, 24, 37, 0.13) 1px, rgba(0, 0, 0, 0) 1.2px)',
-        backgroundSize: '22px 22px',
-      }}
-    >
+    <>
       <Nav />
 
-      {/* Off-white content area — nav keeps the dotted beige, body gets a clean canvas */}
-      <div className="bg-[rgb(252,250,246)]">
-      <main className="w-full px-6 md:px-[90px] xl:px-[120px] pt-12 pb-24">
+      {/* Off-white full-bleed canvas; html provides the dotted beige for the nav band */}
+      <div className="w-full bg-[rgb(252,250,246)]">
+      <main className="max-w-[1440px] mx-auto px-6 md:px-[90px] xl:px-[120px] pt-12 pb-24">
         {/* Back link */}
         <Link
           href="/posts"
@@ -257,8 +251,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </article>
       </main>
 
-      <Footer />
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

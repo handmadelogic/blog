@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden text-[rgb(42,24,37)] px-6 md:px-[90px] pt-14 md:pt-[80px] pb-20 md:pb-[100px] font-nunito">
@@ -60,17 +62,17 @@ export default function Hero() {
 
           {/* CTA buttons */}
           <div className="flex flex-wrap items-center gap-4 relative">
-            <button data-btn="true" className="flex items-center gap-2 bg-[rgb(201,52,126)] text-[rgb(246,240,220)] px-7 py-4 text-[15px] font-bold font-nunito rounded-full cursor-pointer">
-              Read the latest post <span>→</span>
-            </button>
-            <a href="#" className="flex items-center gap-2 text-[rgb(42,24,37)] text-[22px] font-semibold font-caveat cursor-pointer">
+            <Link href="/posts" data-btn="true" className="inline-flex items-center gap-2 bg-[rgb(201,52,126)] text-[rgb(246,240,220)] px-7 py-4 text-[15px] font-bold font-nunito rounded-full">
+              Read the latest post <span aria-hidden="true">→</span>
+            </Link>
+            <Link href="/posts" className="flex items-center gap-2 text-[rgb(42,24,37)] text-[22px] font-semibold font-caveat cursor-pointer">
               or browse by craft
               <svg viewBox="0 0 80 60" width="50" height="37.5" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10,30 C30,28 50,28 70,30" stroke="#D88018" strokeWidth="2" strokeLinecap="round" />
                 <line x1="70" y1="30" x2="62" y2="24" stroke="#D88018" strokeWidth="2" strokeLinecap="round" />
                 <line x1="70" y1="30" x2="62" y2="36" stroke="#D88018" strokeWidth="2" strokeLinecap="round" />
               </svg>
-            </a>
+            </Link>
             <p className="absolute -bottom-10 left-16 text-[rgb(216,128,24)] text-[20px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)'}}>
               ↑ start here, friend
             </p>

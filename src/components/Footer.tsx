@@ -1,10 +1,15 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
-    <footer className="relative w-full -mt-[2px] bg-[rgb(42,24,37)] text-[rgb(246,240,220)] px-6 md:px-14 pt-14 md:pt-[60px] pb-9 font-nunito">
-      {/* Scalloped top wave */}
+    <footer className="relative w-full -mt-[2px] bg-[rgb(42,24,37)] text-[rgb(246,240,220)] font-nunito">
+      {/* Scalloped top wave — full bleed */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 32" preserveAspectRatio="none" className="absolute -top-[4px] left-0 w-full h-[35px] pointer-events-none">
         <path d="M0,32 C40,2 80,2 120,32 C160,2 200,2 240,32 C280,2 320,2 360,32 C400,2 440,2 480,32 C520,2 560,2 600,32 C640,2 680,2 720,32 C760,2 800,2 840,32 C880,2 920,2 960,32 C1000,2 1040,2 1080,32 C1120,2 1160,2 1200,32 C1240,2 1280,2 1320,32 C1360,2 1400,2 1440,32 L1440,0 L0,0 Z" fill="rgb(237,233,222)" />
       </svg>
+
+      {/* Inner content capped at 1440px */}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-14 pt-14 md:pt-[60px] pb-9">
 
       {/* Main grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14 pb-10 mb-8 border-b border-[rgba(246,240,220,0.18)]">
@@ -42,7 +47,8 @@ export default function Footer() {
         <div>
           <h4 className="text-[rgb(240,182,82)] text-[24px] font-bold font-caveat mb-4">Wander</h4>
           <ul className="flex flex-col gap-2">
-            {['Latest posts', 'Process diaries', 'Patterns library', 'Archive'].map(link => (
+            <li><Link href="/posts" data-link="true" className="relative text-[rgba(246,240,220,0.85)] text-[14px] font-nunito">Latest posts</Link></li>
+            {['Process diaries', 'Patterns library', 'Archive'].map(link => (
               <li key={link}>
                 <a href="#" data-link="true" className="relative text-[rgba(246,240,220,0.85)] text-[14px] font-nunito cursor-pointer">{link}</a>
               </li>
@@ -73,6 +79,8 @@ export default function Footer() {
         <span className="text-[rgba(246,240,220,0.45)] text-[11px] font-nunito">© 2026 Sarah · made slowly, with care</span>
         <span className="text-[rgb(240,182,82)] text-[20px] font-semibold font-caveat">thank you for being here ✿</span>
       </div>
+
+      </div>{/* end max-w inner wrapper */}
     </footer>
   );
 }

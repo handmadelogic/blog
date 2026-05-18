@@ -17,6 +17,13 @@
   box-sizing: border-box;
 }
 
+/* Full-viewport background so the dotted beige shows at any screen width */
+html {
+  background-color: rgb(241, 236, 220);
+  background-image: radial-gradient(circle, rgba(42, 24, 37, 0.13) 1px, rgba(0, 0, 0, 0) 1.2px);
+  background-size: 22px 22px;
+}
+
 body {
   margin: 0;
   padding: 0;

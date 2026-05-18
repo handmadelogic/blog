@@ -7,8 +7,8 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav aria-label="Site navigation" className="relative w-full px-6 md:px-14 py-5 md:py-6 font-nunito">
-      <div className="flex items-center justify-between">
+    <nav aria-label="Site navigation" className="relative w-full py-5 md:py-6 font-nunito">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-14 flex items-center justify-between">
         {/* Logo — links to home */}
         <Link href="/" className="flex items-center gap-3">
           <svg aria-hidden="true" viewBox="0 0 60 60" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,9 @@ export default function Nav() {
 
         {/* Desktop nav links */}
         <div className="hidden md:flex gap-8">
-          {['Home', 'Posts', 'Process', 'About', 'Patterns'].map(link => (
+          <Link href="/" data-link="true" className="relative text-[rgb(42,24,37)] text-[15px] font-semibold">Home</Link>
+          <Link href="/posts" data-link="true" className="relative text-[rgb(42,24,37)] text-[15px] font-semibold">Posts</Link>
+          {['Process', 'About', 'Patterns'].map(link => (
             <a key={link} href="#" data-link="true" className="relative text-[rgb(42,24,37)] text-[15px] font-semibold">{link}</a>
           ))}
         </div>
@@ -66,7 +68,9 @@ export default function Nav() {
       {/* Mobile dropdown */}
       {open && (
         <div id="mobile-menu" className="md:hidden absolute top-full left-0 right-0 z-50 bg-[rgb(246,240,220)] border-t border-[rgb(214,205,184)] shadow-lg px-6 py-6 flex flex-col gap-5">
-          {['Home', 'Posts', 'Process', 'About', 'Patterns'].map(link => (
+          <Link href="/" className="text-[18px] font-semibold text-[rgb(42,24,37)]" onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/posts" className="text-[18px] font-semibold text-[rgb(42,24,37)]" onClick={() => setOpen(false)}>Posts</Link>
+          {['Process', 'About', 'Patterns'].map(link => (
             <a key={link} href="#" className="text-[18px] font-semibold text-[rgb(42,24,37)]" onClick={() => setOpen(false)}>
               {link}
             </a>
@@ -80,9 +84,9 @@ export default function Nav() {
         </div>
       )}
 
-      {/* Dashed divider line */}
+      {/* Dashed divider — full width */}
       <div
-        className="absolute bottom-0 left-6 right-6 md:left-14 md:right-14 h-px"
+        className="absolute bottom-0 left-0 right-0 h-px"
         style={{backgroundImage: 'repeating-linear-gradient(90deg, rgb(214, 205, 184) 0px, rgb(214, 205, 184) 8px, rgba(0, 0, 0, 0) 8px, rgba(0, 0, 0, 0) 14px)'}}
       />
     </nav>
