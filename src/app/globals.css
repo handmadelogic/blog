@@ -147,6 +147,55 @@ body {
 [data-btn]:hover  { transform: translateY(-2px); }
 [data-btn]:active { transform: translateY(0); }
 
+/* ─── POST BODY TYPOGRAPHY ─── */
+.prose-handmade {
+  color: rgb(42, 24, 37);
+  font-family: var(--font-nunito);
+  font-size: 17px;
+  line-height: 1.8;
+}
+.prose-handmade p { margin-bottom: 1.5em; }
+.prose-handmade h2 {
+  font-family: var(--font-caveat);
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: rgb(42, 24, 37);
+  margin-top: 2.4em;
+  margin-bottom: 0.5em;
+  line-height: 1.15;
+}
+.prose-handmade h2::before {
+  content: '✦ ';
+  color: rgb(216, 128, 24);
+  font-size: 0.75em;
+  vertical-align: middle;
+  margin-right: 0.1em;
+}
+.prose-handmade h3 {
+  font-family: var(--font-nunito);
+  font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+  font-weight: 800;
+  color: rgb(181, 86, 62);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 2.2em;
+  margin-bottom: 0.7em;
+}
+.prose-handmade strong { font-weight: 700; color: rgb(42, 24, 37); }
+.prose-handmade em { font-style: italic; color: rgb(201, 52, 126); }
+.prose-handmade a { color: rgb(201, 52, 126); text-decoration: underline; text-decoration-style: dashed; text-underline-offset: 3px; }
+.prose-handmade a:hover { text-decoration-style: solid; }
+.prose-handmade ul { list-style: none; margin-bottom: 1.5em; padding-left: 0; }
+.prose-handmade ul li { padding-left: 1.6em; position: relative; margin-bottom: 0.5em; }
+.prose-handmade ul li::before { content: '✿'; position: absolute; left: 0; color: rgb(216, 128, 24); font-size: 0.85em; }
+.prose-handmade ol { counter-reset: ol-counter; list-style: none; padding-left: 0; margin-bottom: 1.5em; }
+.prose-handmade ol li { counter-increment: ol-counter; padding-left: 2em; position: relative; margin-bottom: 0.5em; }
+.prose-handmade ol li::before { content: counter(ol-counter) '.'; position: absolute; left: 0; color: rgb(201, 52, 126); font-weight: 700; }
+.prose-handmade blockquote { border-left: 3px solid rgb(240, 182, 82); margin: 2em 0; padding: 0.5em 0 0.5em 1.5em; font-family: var(--font-lora); font-style: italic; font-size: 1.1em; color: rgb(90, 61, 82); }
+.prose-handmade hr { border: none; text-align: center; margin: 2.5em 0; color: rgb(216, 128, 24); }
+.prose-handmade hr::before { content: '· · ·'; letter-spacing: 0.5em; }
+.prose-handmade code { background: rgb(246, 240, 220); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
+
 /* ─── REDUCED MOTION ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
