@@ -24,8 +24,8 @@ function PostImage({
     align === 'full'
       ? 'w-full my-10 clear-both'
       : align === 'left'
-      ? 'float-left mr-7 mb-4 w-[220px] sm:w-[260px] clear-left'
-      : 'float-right ml-7 mb-4 w-[220px] sm:w-[260px] clear-right';
+      ? 'w-full my-8 clear-both sm:float-left sm:w-[200px] md:w-[240px] sm:mr-7 sm:mb-4 sm:mt-1 sm:clear-left sm:my-0'
+      : 'w-full my-8 clear-both sm:float-right sm:w-[200px] md:w-[240px] sm:ml-7 sm:mb-4 sm:mt-1 sm:clear-right sm:my-0';
 
   const rotate =
     align === 'full' ? 'rotate(-0.6deg)' : align === 'left' ? 'rotate(-1.8deg)' : 'rotate(1.5deg)';
@@ -83,7 +83,7 @@ function Quip({ children, side = 'right' }: { children: React.ReactNode; side?: 
       {/* ── Desktop: positioned into the margin ── */}
       <div className="hidden xl:block relative h-0 overflow-visible clear-both" aria-hidden="false">
         <aside
-          className="absolute top-[-20px] flex flex-col items-center gap-2"
+          className="absolute top-[-20px] flex flex-col items-center gap-3"
           style={{
             ...(isLeft
               ? { right: 'calc(100% + 2.5rem)' }
@@ -91,44 +91,7 @@ function Quip({ children, side = 'right' }: { children: React.ReactNode; side?: 
             width: '190px',
           }}
         >
-          {/* Speech bubble */}
-          <div className="relative w-full">
-            {/* Bubble body */}
-            <div
-              className="bg-[rgb(255,250,235)] rounded-2xl px-4 py-3 text-[14px] font-caveat text-[rgb(42,24,37)] leading-snug"
-              style={{ boxShadow: 'rgba(42,24,37,0.12) 1px 3px 12px 0px' }}
-            >
-              {children}
-            </div>
-            {/* Bubble tail — points toward the article */}
-            {isLeft ? (
-              /* tail pointing right */
-              <svg
-                viewBox="0 0 20 12"
-                width="20"
-                height="12"
-                className="absolute -right-[18px] top-4"
-                fill="rgb(255,250,235)"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M0,0 L0,12 L20,6 Z" />
-              </svg>
-            ) : (
-              /* tail pointing left */
-              <svg
-                viewBox="0 0 20 12"
-                width="20"
-                height="12"
-                className="absolute -left-[18px] top-4"
-                fill="rgb(255,250,235)"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M20,0 L20,12 L0,6 Z" />
-              </svg>
-            )}
-          </div>
-
-          {/* Cartoon portrait placeholder */}
+          {/* Cartoon portrait — the speaker */}
           <div
             className="relative w-[72px] h-[72px] rounded-full border-2 border-dashed border-[rgba(201,52,126,0.35)] bg-[rgb(246,240,220)] flex items-center justify-center overflow-hidden"
             style={{ transform: isLeft ? 'rotate(-2deg)' : 'rotate(2deg)' }}
@@ -141,6 +104,28 @@ function Quip({ children, side = 'right' }: { children: React.ReactNode; side?: 
             <span className="absolute bottom-1 text-[8px] font-caveat text-[rgb(201,52,126)] opacity-50">
               me
             </span>
+          </div>
+
+          {/* Speech bubble — tail points UP toward the portrait */}
+          <div className="relative w-full">
+            {/* Tail pointing up toward the portrait */}
+            <svg
+              viewBox="0 0 20 12"
+              width="20"
+              height="12"
+              className="absolute -top-[10px] left-1/2 -translate-x-1/2"
+              fill="rgb(255,250,235)"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0,12 L20,12 L10,0 Z" />
+            </svg>
+            {/* Bubble body */}
+            <div
+              className="bg-[rgb(255,250,235)] rounded-2xl px-4 py-3 text-[14px] font-caveat text-[rgb(42,24,37)] leading-snug"
+              style={{ boxShadow: 'rgba(42,24,37,0.12) 1px 3px 12px 0px' }}
+            >
+              {children}
+            </div>
           </div>
         </aside>
       </div>
