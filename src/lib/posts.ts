@@ -32,6 +32,34 @@ export function getAllPosts(): PostMeta[] {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
+export type CategoryMeta = {
+  slug: string;
+  category: string;
+  categoryEmoji: string;
+  count: number;
+};
+
+export function getAllCategories(): CategoryMeta[] {
+  const posts = getAllPosts();
+  const map = new Map<string, CategoryMeta>();
+  for (const post of posts) {
+    const slug = post.category.toLowerCase().replace(/\s+/g, '-');
+    const existing = map.get(slug);
+    if (existing) {
+      existing.count++;
+    } else {
+      map.set(slug, { slug, category: post.category, categoryEmoji: post.categoryEmoji, count: 1 });
+    }
+  }
+  return Array.from(map.values());
+}
+
+export function getPostsByCategory(categorySlug: string): PostMeta[] {
+  return getAllPosts().filter(
+    (p) => p.category.toLowerCase().replace(/\s+/g, '-') === categorySlug
+  );
+}
+
 export function getPost(slug: string): Post {
   const filepath = path.join(POSTS_DIR, `${slug}.mdx`);
   const raw = fs.readFileSync(filepath, 'utf-8');

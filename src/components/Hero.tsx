@@ -65,7 +65,7 @@ export default function Hero() {
             <Link href="/posts" data-btn="true" className="inline-flex items-center gap-2 bg-[rgb(201,52,126)] text-[rgb(246,240,220)] px-7 py-4 text-[15px] font-bold font-nunito rounded-full">
               Read the latest post <span aria-hidden="true">→</span>
             </Link>
-            <Link href="/posts" className="flex items-center gap-2 text-[rgb(42,24,37)] text-[22px] font-semibold font-caveat cursor-pointer">
+            <Link href="/crafts" className="flex items-center gap-2 text-[rgb(42,24,37)] text-[22px] font-semibold font-caveat cursor-pointer">
               or browse by craft
               <svg viewBox="0 0 80 60" width="50" height="37.5" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10,30 C30,28 50,28 70,30" stroke="#D88018" strokeWidth="2" strokeLinecap="round" />
