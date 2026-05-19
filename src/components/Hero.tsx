@@ -26,7 +26,7 @@ export default function Hero() {
       </svg>
 
       {/* Main layout grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] xl:grid-cols-[844px_360px] items-center gap-10 xl:gap-14 max-w-[1260px]">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] xl:grid-cols-[844px_360px] items-center gap-10 xl:gap-14 max-w-[1260px] mx-auto">
 
         {/* Left: text content */}
         <div className="relative">
@@ -57,7 +57,7 @@ export default function Hero() {
 
           {/* Subtext */}
           <p className="max-w-[560px] text-[rgb(90,61,82)] text-[18px] md:text-[22px] italic font-lora leading-[1.55em] mb-10">
-            Yarn under my chair. Clay under my fingernails. Sawdust somewhere I cannot account for. The honest log of a person who makes too many things at once — and writes them down so they don't disappear.
+            Yarn under my chair. Clay under my fingernails. Sawdust somewhere I cannot account for. The honest log of a person who makes too many things at once, writing them down so they don&apos;t disappear.
           </p>
 
           {/* CTA buttons */}
@@ -73,7 +73,7 @@ export default function Hero() {
                 <line x1="70" y1="30" x2="62" y2="36" stroke="#D88018" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </Link>
-            <p data-handwrite="true" data-handwrite-speed="fast" className="absolute -bottom-10 left-16 text-[rgb(216,128,24)] text-[20px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)', transitionDelay: '1.2s'}}>
+            <p data-handwrite="true" data-handwrite-speed="fast" className="absolute -bottom-10 left-16 z-10 text-[rgb(216,128,24)] text-[20px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)', transitionDelay: '1.2s'}}>
               ↑ start here, friend
             </p>
           </div>
@@ -99,9 +99,9 @@ export default function Hero() {
             <p data-handwrite="true" data-handwrite-speed="fast" className="absolute bottom-[-22px] left-0 right-0 text-center text-[rgb(42,24,37)] text-[18px] font-semibold font-caveat opacity-55">✿ margot, illustration coming</p>
           </div>
           {/* Annotation */}
-          <p data-handwrite="true" className="absolute top-6 -right-8 text-[rgb(201,52,126)] text-[26px] font-bold font-caveat leading-tight" style={{transform: 'matrix(0.994522, -0.104528, 0.104528, 0.994522, 0, 0)'}}>
+          <p data-handwrite="true" className="absolute top-6 -right-8 z-10 text-[rgb(201,52,126)] text-[26px] font-bold font-caveat leading-tight" style={{transform: 'matrix(0.994522, -0.104528, 0.104528, 0.994522, 0, 0)'}}>
             hi! that&apos;s me<br />
-            <span className="text-[rgb(42,24,37)] text-[18px] font-semibold">(soon — drawn) ✿</span>
+            <span className="text-[rgb(42,24,37)] text-[18px] font-semibold">(illustration coming) ✿</span>
           </p>
           {/* Decorative craft SVGs */}
           <svg viewBox="0 0 60 60" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" data-draw-svg="true" className="absolute bottom-0 -left-5" style={{transform: 'matrix(0.978148, -0.207912, 0.207912, 0.978148, 0, 0)'}}>

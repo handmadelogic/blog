@@ -62,7 +62,7 @@ export const CRAFTS: CraftDefinition[] = [
     emoji: '🎨',
     gradient: 'linear-gradient(135deg, rgb(229,143,184) 0%, rgb(216,128,24) 100%)',
     accent: 'rgb(181,86,62)',
-    tagline: 'Brushes, pigment, and the occasional cat.',
+    tagline: 'Brushes, pigment, and two unsolicited assistants.',
   },
   {
     slug: 'reno',

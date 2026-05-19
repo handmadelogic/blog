@@ -163,7 +163,7 @@ body {
   will-change: transform;
 }
 [data-btn] svg {
-  transition: transform 0.28s cubic-bezier(.34,1.56,.64,1);
+  transition: transform 0.28s cubic-bezier(.2,.7,.3,1);
   transform-origin: center;
 }
 [data-btn]:hover {
@@ -190,7 +190,7 @@ body {
 }
 [data-back-link]:hover { color: rgb(42, 24, 37); }
 [data-back-link]:hover svg { transform: translateX(-5px); }
-[data-back-link]:focus-visible { outline: none; }
+[data-back-link]:focus-visible { outline: none; color: rgb(178, 28, 103); }
 [data-back-link]:focus-visible svg { transform: translateX(-5px); }
 
 /* ─── POST BODY TYPOGRAPHY ─── */
@@ -255,7 +255,8 @@ body {
 .prose-handmade ol { counter-reset: ol-counter; list-style: none; padding-left: 0; margin-bottom: 1.5em; }
 .prose-handmade ol li { counter-increment: ol-counter; padding-left: 2em; position: relative; margin-bottom: 0.5em; }
 .prose-handmade ol li::before { content: counter(ol-counter) '.'; position: absolute; left: 0; color: rgb(178, 28, 103); font-weight: 700; }
-.prose-handmade blockquote { border-left: 3px solid rgb(240, 182, 82); margin: 2em 0; padding: 0.5em 0 0.5em 1.5em; font-family: var(--font-lora); font-style: italic; font-size: 1.1em; color: rgb(90, 61, 82); }
+.prose-handmade blockquote { background: rgba(240,182,82,0.13); border-radius: 10px; margin: 2em 0; padding: 1em 1.5em 1em 1.5em; font-family: var(--font-lora); font-style: italic; font-size: 1.1em; color: rgb(90, 61, 82); }
+.prose-handmade blockquote::before { content: '✦'; display: block; color: rgb(216,128,24); font-style: normal; font-family: var(--font-nunito); font-size: 0.75em; letter-spacing: 0.12em; margin-bottom: 0.5em; }
 .prose-handmade hr { border: none; text-align: center; margin: 2.5em 0; color: rgb(216, 128, 24); }
 .prose-handmade hr::before { content: '· · ·'; letter-spacing: 0.5em; }
 .prose-handmade code { background: rgb(246, 240, 220); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
@@ -268,4 +269,11 @@ body {
     transition-duration: 0.01ms !important;
   }
   [data-draw], [data-reveal] { opacity: 1 !important; transform: none !important; stroke-dashoffset: 0 !important; }
+  /* Handwrite elements: remove clip-path entirely so text is immediately readable */
+  [data-handwrite], [data-handwrite-hover] {
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+  }
+  /* Draw-SVG filled shapes start at opacity 0 — reset them so they're visible */
+  [data-draw-svg] [fill]:not([fill="none"]) { opacity: 1 !important; }
 }

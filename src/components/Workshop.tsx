@@ -1,8 +1,8 @@
 const checklistItems = [
   { emoji: '🪢', color: 'rgba(181,86,62,0.2)', title: 'Macramé wall hanging', note: 'mostly knots. occasional doubt.', progress: 32, barColor: 'rgb(181,86,62)' },
-  { emoji: '💡', color: 'rgba(122,148,104,0.2)', title: 'Stained-glass nightlight', note: 'finished — except the cord. need a cord.', progress: 78, barColor: 'rgb(122,148,104)' },
+  { emoji: '💡', color: 'rgba(122,148,104,0.2)', title: 'Stained-glass nightlight', note: 'finished, except the cord. need a cord.', progress: 78, barColor: 'rgb(122,148,104)' },
   { emoji: '🪵', color: 'rgba(216,128,24,0.2)', title: 'Walnut spice rack', note: 'sanded twice. unclear why.', progress: 55, barColor: 'rgb(216,128,24)' },
-  { emoji: '🎨', color: 'rgba(201,52,126,0.2)', title: 'Watercolour florals series', note: 'cat walked through palette. incorporated.', progress: 18, barColor: 'rgb(201,52,126)' },
+  { emoji: '🎨', color: 'rgba(201,52,126,0.2)', title: 'Watercolour florals series', note: 'small hands involved. calling it collaborative.', progress: 18, barColor: 'rgb(201,52,126)' },
   { emoji: '🏡', color: 'rgba(92,45,82,0.2)', title: 'Cottage shed paint job', note: 'magenta won. always magenta.', progress: 88, barColor: 'rgb(92,45,82)' },
 ];
 
@@ -34,7 +34,7 @@ export default function Workshop() {
           </h2>
 
           <p className="max-w-[380px] text-[rgb(90,61,82)] text-[19px] italic font-lora leading-[1.55em] mb-8">
-            The very honest log of what I&apos;m actually making right now — including the parts where I forgot to take a &quot;before&quot; photo. Again.
+            The very honest log of what I&apos;m actually making right now, including the parts where I forgot to take a &quot;before&quot; photo. Again.
           </p>
 
           {/* Small portrait + sticky note */}
@@ -63,7 +63,7 @@ export default function Workshop() {
 
         {/* Right: checklist card */}
         <div className="relative">
-          <p data-handwrite="true" data-handwrite-speed="fast" className="hidden lg:block absolute -top-6 right-0 text-[rgb(201,52,126)] text-[22px] font-bold font-caveat" style={{transform: 'matrix(0.994522, -0.104528, 0.104528, 0.994522, 0, 0)'}}>
+          <p data-handwrite="true" data-handwrite-speed="fast" className="hidden lg:block absolute -top-6 right-0 z-10 text-[rgb(201,52,126)] text-[22px] font-bold font-caveat" style={{transform: 'matrix(0.994522, -0.104528, 0.104528, 0.994522, 0, 0)'}}>
             stuck on this one ↓
           </p>
           <div className="bg-[rgb(255,250,235)] px-8 py-8 rounded-[20px]" style={{boxShadow: 'rgba(42, 24, 37, 0.08) 0px 14px 36px 0px'}}>
@@ -84,29 +84,36 @@ export default function Workshop() {
                 <h3 className="text-[rgb(42,24,37)] text-[24px] font-bold font-lora">Workshop checklist</h3>
                 <span className="text-[rgb(201,52,126)] ml-2 text-[20px] font-bold font-caveat">(today&apos;s)</span>
               </div>
-              <span className="text-[rgb(122,148,104)] text-[12px] font-bold tracking-[0.96px] shrink-0">5 OPEN</span>
+              <span className="text-[rgb(122,148,104)] text-[12px] font-bold tracking-[0.96px] shrink-0" aria-live="polite">{checklistItems.length} OPEN</span>
             </div>
 
             {/* Items */}
-            <div className="divide-y divide-[rgb(214,205,184)]">
+            <ul className="divide-y divide-[rgb(214,205,184)]" aria-label="Workshop checklist">
               {checklistItems.map((item) => (
-                <div key={item.title} className="grid items-center gap-4 py-4" style={{gridTemplateColumns: '36px 1fr 100px'}}>
-                  <div className="flex w-9 h-9 items-center justify-center text-[18px] rounded-lg" style={{backgroundColor: item.color}}>
+                <li key={item.title} className="grid items-center gap-4 py-4" style={{gridTemplateColumns: '36px 1fr 100px'}}>
+                  <div className="flex w-9 h-9 items-center justify-center text-[18px] rounded-lg shrink-0" style={{backgroundColor: item.color}} aria-hidden="true">
                     {item.emoji}
                   </div>
-                  <div>
-                    <div className="text-[rgb(42,24,37)] text-[17px] font-semibold font-lora mb-0.5">{item.title}</div>
+                  <div className="min-w-0">
+                    <div className="text-[rgb(42,24,37)] text-[17px] font-semibold font-lora mb-0.5 overflow-wrap-anywhere">{item.title}</div>
                     <div className="text-[rgb(90,61,82)] text-[15px] font-semibold font-caveat leading-tight">{item.note}</div>
                   </div>
                   <div>
-                    <div className="w-full h-1.5 bg-[rgb(214,205,184)] rounded-full overflow-hidden">
-                      <div className="h-full rounded-full" style={{width: `${item.progress}px`, backgroundColor: item.barColor, maxWidth: '100%'}} />
+                    <div
+                      className="w-full h-1.5 bg-[rgb(214,205,184)] rounded-full overflow-hidden"
+                      role="progressbar"
+                      aria-valuenow={item.progress}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      aria-label={`${item.title}: ${item.progress}% complete`}
+                    >
+                      <div className="h-full rounded-full" style={{width: `${item.progress}%`, backgroundColor: item.barColor}} />
                     </div>
-                    <div className="text-[rgb(137,112,120)] text-[11px] font-bold font-nunito text-right mt-1">{item.progress}% done</div>
+                    <div className="text-[rgb(137,112,120)] text-[11px] font-bold font-nunito text-right mt-1" aria-hidden="true">{item.progress}% done</div>
                   </div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>

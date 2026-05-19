@@ -147,7 +147,7 @@ export default async function CraftPage({ params }: { params: Promise<{ slug: st
                   Nothing here yet
                 </h2>
                 <p className="text-[rgb(90,61,82)] font-lora italic text-[16px] leading-[1.7] mb-6">
-                  I&apos;m working on it — this shelf will fill up soon. Check back or browse another craft in the meantime.
+                  I&apos;m working on it. This shelf will fill up soon. Check back or browse another craft in the meantime.
                 </p>
                 <p className="text-[rgb(216,128,24)] font-caveat text-[22px] font-semibold mb-8">
                   something&apos;s brewing ✿

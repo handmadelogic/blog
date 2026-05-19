@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function About() {
   return (
     <section className="relative w-full overflow-hidden bg-[rgb(237,233,222)] text-[rgb(42,24,37)] px-6 md:px-[60px] py-16 md:py-24 font-nunito">
@@ -95,18 +97,18 @@ export default function About() {
           </h2>
 
           <p className="text-[rgb(90,61,82)] text-[17px] font-nunito leading-[1.7em] mb-4">
-            I&apos;m Sarah. Self-taught everything-er. I live in a small place with a loud cat and one of those squeaky studio chairs you never get around to fixing.
+            I&apos;m Sarah. Self-taught everything-er. I live in a small place with two small people and one of those squeaky studio chairs you never get around to fixing.
           </p>
           <p className="text-[rgb(90,61,82)] text-[17px] font-nunito leading-[1.7em] mb-6">
-            This blog is where I write down what I&apos;m learning, in case it&apos;s useful to you — and so I stop forgetting which dye lot I bought in 2023.
+            This blog is where I write down what I&apos;m learning, in case it&apos;s useful to you, and so I stop forgetting which dye lot I bought in 2023.
           </p>
           <p data-handwrite="true" data-handwrite-speed="slow" className="text-[rgb(201,52,126)] text-[22px] font-semibold font-caveat leading-[1.4em] mb-7">
             p.s. yes, even the dovetail joints. especially those.
           </p>
 
-          <a href="#" data-btn="true" className="inline-flex items-center gap-2 bg-[rgb(92,45,82)] text-[rgb(246,240,220)] px-6 py-[14px] text-[14px] font-bold font-nunito rounded-full cursor-pointer">
-            Read the full story <span>→</span>
-          </a>
+          <Link href="/about" data-btn="true" className="inline-flex items-center gap-2 bg-[rgb(92,45,82)] text-[rgb(246,240,220)] px-6 py-[14px] text-[14px] font-bold font-nunito rounded-full cursor-pointer">
+            Read the full story <span aria-hidden="true">→</span>
+          </Link>
 
           <p data-handwrite="true" data-handwrite-speed="fast" className="hidden md:block absolute bottom-0 right-0 text-[rgb(216,128,24)] text-[22px] font-bold font-caveat" style={{transform: 'matrix(0.997564, 0.0697565, -0.0697565, 0.997564, 0, 0)'}}>
             ✦ send pics of yours

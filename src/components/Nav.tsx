@@ -2,9 +2,27 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Posts', href: '/posts' },
+  { label: 'Crafts', href: '/crafts' },
+  { label: 'About', href: '/about' },
+  { label: 'Freebies', href: '/freebies' },
+];
+
+function scrollToNewsletter() {
+  const el = document.getElementById('footer-email');
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => el.focus(), 400);
+  }
+}
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav aria-label="Site navigation" className="relative w-full py-5 md:py-6 font-nunito">
@@ -30,15 +48,32 @@ export default function Nav() {
 
         {/* Desktop nav links */}
         <div className="hidden md:flex gap-8">
-          <Link href="/" data-link="true" className="relative text-[rgb(42,24,37)] text-[15px] font-semibold">Home</Link>
-          <Link href="/posts" data-link="true" className="relative text-[rgb(42,24,37)] text-[15px] font-semibold">Posts</Link>
-          {['Process', 'About', 'Patterns'].map(link => (
-            <a key={link} href="#" data-link="true" className="relative text-[rgb(42,24,37)] text-[15px] font-semibold">{link}</a>
-          ))}
+          {navLinks.map(({ label, href }) => {
+            const isActive = href !== '#' && pathname === href;
+            return isActive ? (
+              <span
+                key={label}
+                aria-current="page"
+                className="relative inline-block text-[rgb(201,52,126)] text-[15px] font-semibold"
+              >
+                {label}
+                <span aria-hidden="true" className="absolute left-0 right-0 -bottom-[3px] h-[2px] bg-[rgb(178,28,103)] rounded-full" />
+              </span>
+            ) : (
+              <Link
+                key={label}
+                href={href}
+                data-link="true"
+                className="relative text-[rgb(42,24,37)] text-[15px] font-semibold"
+              >
+                {label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Subscribe button (desktop) */}
-        <button data-btn="true" className="hidden md:flex items-center gap-2 bg-[rgb(92,45,82)] text-[rgb(246,240,220)] px-[22px] py-3 text-[13px] font-bold rounded-full cursor-pointer" style={{transform: 'matrix(1, 0, 0, 1, 0, -2)'}}>
+        <button type="button" onClick={scrollToNewsletter} data-btn="true" className="hidden md:flex items-center gap-2 bg-[rgb(92,45,82)] text-[rgb(246,240,220)] px-[22px] py-3 text-[13px] font-bold rounded-full cursor-pointer" style={{transform: 'matrix(1, 0, 0, 1, 0, -2)'}}>
           <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12,21 C10,18 4,14 4,9 C4,6 6,4 9,4 C10.5,4 11.5,5 12,6 C12.5,5 13.5,4 15,4 C18,4 20,6 20,9 C20,14 14,18 12,21 Z" fill="#F6F0DC" />
           </svg>
@@ -47,7 +82,7 @@ export default function Nav() {
 
         {/* Hamburger (mobile) */}
         <button
-          className="md:hidden p-2 text-[rgb(42,24,37)]"
+          className="md:hidden p-3 text-[rgb(42,24,37)]"
           onClick={() => setOpen(!open)}
           aria-label="Toggle navigation"
           aria-expanded={open}
@@ -68,14 +103,28 @@ export default function Nav() {
       {/* Mobile dropdown */}
       {open && (
         <div id="mobile-menu" className="md:hidden absolute top-full left-0 right-0 z-50 bg-[rgb(246,240,220)] border-t border-[rgb(214,205,184)] shadow-lg px-6 py-6 flex flex-col gap-5">
-          <Link href="/" className="text-[18px] font-semibold text-[rgb(42,24,37)]" onClick={() => setOpen(false)}>Home</Link>
-          <Link href="/posts" className="text-[18px] font-semibold text-[rgb(42,24,37)]" onClick={() => setOpen(false)}>Posts</Link>
-          {['Process', 'About', 'Patterns'].map(link => (
-            <a key={link} href="#" className="text-[18px] font-semibold text-[rgb(42,24,37)]" onClick={() => setOpen(false)}>
-              {link}
-            </a>
-          ))}
-          <button className="flex items-center gap-2 bg-[rgb(92,45,82)] text-[rgb(246,240,220)] px-5 py-3 text-[14px] font-bold rounded-full self-start mt-1 cursor-pointer">
+          {navLinks.map(({ label, href }) => {
+            const isActive = href !== '#' && pathname === href;
+            return isActive ? (
+              <span
+                key={label}
+                aria-current="page"
+                className="text-[18px] font-semibold text-[rgb(201,52,126)]"
+              >
+                {label}
+              </span>
+            ) : (
+              <Link
+                key={label}
+                href={href}
+                className="text-[18px] font-semibold text-[rgb(42,24,37)]"
+                onClick={() => setOpen(false)}
+              >
+                {label}
+              </Link>
+            );
+          })}
+          <button type="button" onClick={() => { setOpen(false); scrollToNewsletter(); }} data-btn="true" className="flex items-center gap-2 bg-[rgb(92,45,82)] text-[rgb(246,240,220)] px-5 py-3 text-[14px] font-bold rounded-full self-start mt-1 cursor-pointer">
             <svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none">
               <path d="M12,21 C10,18 4,14 4,9 C4,6 6,4 9,4 C10.5,4 11.5,5 12,6 C12.5,5 13.5,4 15,4 C18,4 20,6 20,9 C20,14 14,18 12,21 Z" fill="#F6F0DC" />
             </svg>

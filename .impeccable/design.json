@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-19T00:00:00.000Z",
+  "title": "Design System: Handmade Logic",
+  "extensions": {
+    "colorMeta": {
+      "signal-pink":      { "role": "primary",   "displayName": "Signal Pink",      "canonical": "oklch(52% 0.24 350)", "tonalRamp": ["oklch(18% 0.08 350)","oklch(27% 0.14 350)","oklch(36% 0.20 350)","oklch(44% 0.23 350)","oklch(52% 0.24 350)","oklch(64% 0.18 350)","oklch(76% 0.11 350)","oklch(90% 0.05 350)"] },
+      "signal-pink-deep": { "role": "primary",   "displayName": "Signal Pink Deep", "canonical": "oklch(43% 0.22 350)", "tonalRamp": ["oklch(14% 0.07 350)","oklch(22% 0.12 350)","oklch(30% 0.18 350)","oklch(37% 0.21 350)","oklch(43% 0.22 350)","oklch(55% 0.17 350)","oklch(70% 0.10 350)","oklch(86% 0.04 350)"] },
+      "golden-hour":      { "role": "secondary", "displayName": "Golden Hour",      "canonical": "oklch(78% 0.16 72)",  "tonalRamp": ["oklch(25% 0.07 72)","oklch(38% 0.10 72)","oklch(50% 0.13 72)","oklch(62% 0.15 72)","oklch(78% 0.16 72)","oklch(86% 0.12 72)","oklch(92% 0.07 72)","oklch(97% 0.03 72)"] },
+      "golden-hour-deep": { "role": "secondary", "displayName": "Golden Hour Deep", "canonical": "oklch(62% 0.18 65)",  "tonalRamp": ["oklch(20% 0.07 65)","oklch(30% 0.10 65)","oklch(42% 0.14 65)","oklch(52% 0.17 65)","oklch(62% 0.18 65)","oklch(73% 0.14 65)","oklch(84% 0.08 65)","oklch(94% 0.03 65)"] },
+      "worn-sage":        { "role": "tertiary",  "displayName": "Worn Sage",        "canonical": "oklch(59% 0.08 142)", "tonalRamp": ["oklch(20% 0.04 142)","oklch(30% 0.05 142)","oklch(40% 0.07 142)","oklch(50% 0.08 142)","oklch(59% 0.08 142)","oklch(70% 0.06 142)","oklch(82% 0.04 142)","oklch(93% 0.02 142)"] },
+      "studio-plum":      { "role": "tertiary",  "displayName": "Studio Plum",      "canonical": "oklch(30% 0.10 330)", "tonalRamp": ["oklch(12% 0.05 330)","oklch(20% 0.07 330)","oklch(26% 0.09 330)","oklch(30% 0.10 330)","oklch(40% 0.09 330)","oklch(55% 0.07 330)","oklch(70% 0.05 330)","oklch(88% 0.02 330)"] },
+      "fired-clay":       { "role": "tertiary",  "displayName": "Fired Clay",       "canonical": "oklch(52% 0.13 38)",  "tonalRamp": ["oklch(18% 0.06 38)","oklch(28% 0.09 38)","oklch(38% 0.11 38)","oklch(46% 0.13 38)","oklch(52% 0.13 38)","oklch(65% 0.10 38)","oklch(78% 0.06 38)","oklch(92% 0.02 38)"] },
+      "ink-plum":         { "role": "neutral",   "displayName": "Ink Plum",         "canonical": "oklch(16% 0.05 330)", "tonalRamp": ["oklch(8% 0.03 330)","oklch(14% 0.05 330)","oklch(20% 0.06 330)","oklch(28% 0.06 330)","oklch(38% 0.05 330)","oklch(52% 0.04 330)","oklch(68% 0.03 330)","oklch(86% 0.01 330)"] },
+      "secondary-text":   { "role": "neutral",   "displayName": "Secondary Text",   "canonical": "oklch(35% 0.07 330)", "tonalRamp": ["oklch(14% 0.04 330)","oklch(22% 0.05 330)","oklch(30% 0.06 330)","oklch(35% 0.07 330)","oklch(45% 0.06 330)","oklch(58% 0.05 330)","oklch(72% 0.03 330)","oklch(88% 0.01 330)"] },
+      "canvas-cream":     { "role": "neutral",   "displayName": "Canvas Cream",     "canonical": "oklch(93% 0.01 85)",  "tonalRamp": ["oklch(20% 0.01 85)","oklch(38% 0.01 85)","oklch(55% 0.01 85)","oklch(70% 0.01 85)","oklch(80% 0.01 85)","oklch(87% 0.01 85)","oklch(93% 0.01 85)","oklch(98% 0.005 85)"] },
+      "card-cream":       { "role": "neutral",   "displayName": "Card Cream",       "canonical": "oklch(98% 0.008 90)", "tonalRamp": ["oklch(22% 0.005 90)","oklch(40% 0.006 90)","oklch(58% 0.007 90)","oklch(72% 0.007 90)","oklch(82% 0.007 90)","oklch(90% 0.008 90)","oklch(95% 0.008 90)","oklch(98% 0.008 90)"] },
+      "divider-warm":     { "role": "neutral",   "displayName": "Divider Warm",     "canonical": "oklch(83% 0.02 80)",  "tonalRamp": ["oklch(25% 0.01 80)","oklch(42% 0.01 80)","oklch(58% 0.01 80)","oklch(68% 0.015 80)","oklch(76% 0.018 80)","oklch(83% 0.02 80)","oklch(90% 0.015 80)","oklch(96% 0.008 80)"] }
+    },
+    "typographyMeta": {
+      "display":   { "displayName": "Display",   "purpose": "Homepage hero h1 only. Used once per page at most. Tight leading collapses multiple lines into a single visual block." },
+      "headline":  { "displayName": "Headline",  "purpose": "Section headings across all pages. Carries colour emphasis via italic <em> in Signal Pink or Worn Sage." },
+      "title":     { "displayName": "Title",     "purpose": "Card headings and sub-headings. Lora at a working scale — editorial but not monumental." },
+      "body":      { "displayName": "Body",      "purpose": "All prose copy. 17px for UI copy; 20–22px italic Lora for section-opening intro paragraphs. Max 65ch." },
+      "label":     { "displayName": "Label",     "purpose": "Category badges, section eyebrows, stat chips, progress percentages. Always uppercase, always tracked." },
+      "handwrite": { "displayName": "Handwrite", "purpose": "Decorative annotations only — sticky notes, margin callouts, captions. Never used for interactive or functional text." }
+    },
+    "shadows": [
+      { "name": "card-ambient",     "value": "rgba(42,24,37,0.10) 0px 10px 30px 0px, rgba(42,24,37,0.05) 0px 2px 6px 0px", "purpose": "Post cards and content cards at rest. Two-layer warm shadow." },
+      { "name": "surface-float",    "value": "rgba(42,24,37,0.08) 0px 14px 36px 0px",                                        "purpose": "Larger containers (checklist card, workshop section) on coloured backgrounds." },
+      { "name": "note-pin",         "value": "rgba(42,24,37,0.10) 0px 4px 14px 0px",                                         "purpose": "Sticky notes, washi-tape pinned elements. Compact — for physically-attached small objects." },
+      { "name": "photo-dramatic",   "value": "rgba(42,24,37,0.22) 0px 22px 52px 0px, rgba(42,24,37,0.10) 0px 4px 14px 0px", "purpose": "Polaroid photo frame only. Heavy ambient shadow suggests a photograph lifted off a table." },
+      { "name": "btn-hover-glow",   "value": "rgba(92,45,82,0.45) 0px 12px 28px -4px",                                       "purpose": "Primary and subscribe button hover state. Studio Plum tint — reads as a warm coloured aura." }
+    ],
+    "motion": [
+      { "name": "ease-standard",   "value": "cubic-bezier(0.2, 0.7, 0.3, 1)",   "duration": "220ms", "purpose": "Default easing for all state transitions (button hover, link colour, nav underline)." },
+      { "name": "ease-reveal",     "value": "cubic-bezier(0.2, 0.7, 0.3, 1)",   "duration": "700ms", "purpose": "Section reveal: translateY(28px) + opacity fade-in on scroll entry." },
+      { "name": "ease-handwrite",  "value": "cubic-bezier(0.45, 0.1, 0.35, 1)", "duration": "1300ms","purpose": "Caveat annotation clip-path reveal. Mimics the pace of handwriting." },
+      { "name": "ease-draw-svg",   "value": "cubic-bezier(0.5, 0.1, 0.3, 1)",   "duration": "900ms", "purpose": "SVG path stroke-dashoffset draw. Slightly snappier than handwrite." },
+      { "name": "ease-card-lift",  "value": "cubic-bezier(0.2, 0.7, 0.3, 1)",   "duration": "320ms", "purpose": "Card hover: translateY(-6px) + rotation-to-0deg + shadow deepen." }
+    ],
+    "breakpoints": [
+      { "name": "sm",  "value": "640px"  },
+      { "name": "md",  "value": "768px"  },
+      { "name": "lg",  "value": "1024px" },
+      { "name": "xl",  "value": "1280px" },
+      { "name": "2xl", "value": "1440px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The decisive call-to-action. Signal Pink pill with warm lift-and-glow on hover.",
+      "html": "<button class=\"ds-btn-primary\">Read the latest post <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #C9347E; color: #F6F0DC; padding: 16px 28px; font-family: 'Nunito', system-ui, sans-serif; font-size: 15px; font-weight: 700; border-radius: 9999px; border: none; cursor: pointer; transition: transform 0.22s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.22s cubic-bezier(0.2,0.7,0.3,1); will-change: transform; } .ds-btn-primary:hover { transform: translateY(-3px) scale(1.04); box-shadow: rgba(92,45,82,0.45) 0px 12px 28px -4px; } .ds-btn-primary:active { transform: translateY(1px) scale(0.97); box-shadow: rgba(92,45,82,0.2) 0px 3px 8px; transition-duration: 0.1s; } .ds-btn-primary:focus-visible { outline: 3px solid #B21C67; outline-offset: 3px; }"
+    },
+    {
+      "name": "Subscribe Button",
+      "kind": "button",
+      "refersTo": "button-subscribe",
+      "description": "Studio Plum pill for newsletter and secondary CTAs. Same lift as primary.",
+      "html": "<button class=\"ds-btn-subscribe\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\"><path d=\"M12,21 C10,18 4,14 4,9 C4,6 6,4 9,4 C10.5,4 11.5,5 12,6 C12.5,5 13.5,4 15,4 C18,4 20,6 20,9 C20,14 14,18 12,21 Z\" fill=\"#F6F0DC\"/></svg> Subscribe</button>",
+      "css": ".ds-btn-subscribe { display: inline-flex; align-items: center; gap: 8px; background: #5C2D52; color: #F6F0DC; padding: 12px 22px; font-family: 'Nunito', system-ui, sans-serif; font-size: 13px; font-weight: 700; border-radius: 9999px; border: none; cursor: pointer; transition: transform 0.22s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.22s; } .ds-btn-subscribe:hover { transform: translateY(-3px) scale(1.04); box-shadow: rgba(92,45,82,0.45) 0px 12px 28px -4px; } .ds-btn-subscribe:active { transform: translateY(1px) scale(0.97); transition-duration: 0.1s; } .ds-btn-subscribe:focus-visible { outline: 3px solid #B21C67; outline-offset: 3px; }"
+    },
+    {
+      "name": "Section Eyebrow Badge",
+      "kind": "chip",
+      "refersTo": "badge-amber",
+      "description": "Golden Hour pill that opens every major section. Always paired with a small inline SVG icon.",
+      "html": "<div class=\"ds-badge-eyebrow\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\"><path d=\"M12,2 C12,8 16,12 22,12 C16,12 12,16 12,22 C12,16 8,12 2,12 C8,12 12,8 12,2 Z\" fill=\"#2A1825\"/></svg><span>est. 2024 · made with my hands</span></div>",
+      "css": ".ds-badge-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: #F0B652; color: #2A1825; padding: 8px 18px; font-family: 'Nunito', system-ui, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.52px; border-radius: 9999px; }"
+    },
+    {
+      "name": "Category Chip (on image)",
+      "kind": "chip",
+      "description": "Surface Cream pill overlaying a gradient image area. Text colour matches the craft category accent.",
+      "html": "<div class=\"ds-chip-category\" style=\"color: #7A9468\">🌸 Polymer clay</div>",
+      "css": ".ds-chip-category { display: inline-flex; align-items: center; background: #F6F0DC; padding: 4px 12px; font-family: 'Nunito', system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.44px; border-radius: 9999px; }"
+    },
+    {
+      "name": "Post Card",
+      "kind": "card",
+      "refersTo": "card-post",
+      "description": "Content card with Card Cream background, warm shadow, and a slight resting rotation. Straightens and lifts on hover.",
+      "html": "<article class=\"ds-card-post\" style=\"transform: matrix(0.9998, -0.0175, 0.0175, 0.9998, 0, 0)\"><div class=\"ds-card-post__image\" style=\"background: linear-gradient(135deg, rgb(229,143,184) 0%, rgb(201,52,126) 100%)\"><div class=\"ds-chip-category\" style=\"color:#C9347E; position:absolute; top:12px; left:12px;\">🧶 Knitting</div></div><div class=\"ds-card-post__body\"><h3 class=\"ds-card-post__title\">I tried to knit a sweater. It is, definitively, a scarf now.</h3><p class=\"ds-card-post__desc\">Three frogs. Two cries. One epiphany about kitchener stitch.</p><div class=\"ds-card-post__meta\">May 12, 2026 · 9 min read</div></div></article>",
+      "css": ".ds-card-post { background: #FFFAEB; border-radius: 12px; padding: 16px; box-shadow: rgba(42,24,37,0.10) 0px 10px 30px, rgba(42,24,37,0.05) 0px 2px 6px; cursor: pointer; transition: transform 0.32s cubic-bezier(0.2,0.7,0.3,1), box-shadow 0.32s; will-change: transform; position: relative; } .ds-card-post:hover { transform: translateY(-6px) rotate(0deg) !important; box-shadow: rgba(42,24,37,0.16) 0px 18px 44px, rgba(42,24,37,0.08) 0px 4px 10px; z-index: 5; } .ds-card-post__image { position: relative; width: 100%; height: 280px; border-radius: 8px; overflow: hidden; margin-bottom: 0; } .ds-card-post__body { padding: 20px 8px 8px; } .ds-card-post__title { font-family: 'Lora', Georgia, serif; font-size: 28px; font-weight: 600; color: #2A1825; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 8px; } .ds-card-post__desc { font-family: 'Nunito', system-ui, sans-serif; font-size: 15px; color: #5A3D52; line-height: 1.6; margin: 0 0 12px; } .ds-card-post__meta { font-family: 'Nunito', system-ui, sans-serif; font-size: 12px; color: #896D78; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "description": "Desktop nav link with raspberry underline sweep on hover. Active state renders as a non-interactive span.",
+      "html": "<a class=\"ds-nav-link\" href=\"/posts\">Posts</a>",
+      "css": ".ds-nav-link { position: relative; display: inline-block; color: #2A1825; font-family: 'Nunito', system-ui, sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; transition: color 0.22s cubic-bezier(0.2,0.7,0.3,1); } .ds-nav-link::after { content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px; background: #B21C67; border-radius: 2px; transform: scaleX(0); transform-origin: left; transition: transform 0.3s cubic-bezier(0.2,0.7,0.3,1); } .ds-nav-link:hover { color: #B21C67; } .ds-nav-link:hover::after { transform: scaleX(1); } .ds-nav-link:focus-visible { outline: none; color: #B21C67; } .ds-nav-link:focus-visible::after { transform: scaleX(1); }"
+    },
+    {
+      "name": "Newsletter Input",
+      "kind": "input",
+      "description": "Email field embedded in a pill wrapper alongside a Signal Pink submit button. Used in the dark footer.",
+      "html": "<form class=\"ds-newsletter\"><label for=\"ds-email\" class=\"ds-sr-only\">Email address</label><input class=\"ds-newsletter__input\" id=\"ds-email\" type=\"email\" placeholder=\"your email\" /><button class=\"ds-newsletter__btn\" type=\"submit\">JOIN</button></form>",
+      "css": ".ds-newsletter { display: flex; align-items: center; background: rgba(246,240,220,0.08); border-radius: 9999px; padding: 4px; } .ds-newsletter__input { flex: 1; min-width: 0; background: transparent; color: #F6F0DC; padding: 8px 16px; font-family: 'Nunito', system-ui, sans-serif; font-size: 13px; outline: none; border: none; } .ds-newsletter__input::placeholder { color: rgba(246,240,220,0.45); } .ds-newsletter__btn { background: #C9347E; color: #F6F0DC; padding: 8px 18px; font-family: 'Nunito', system-ui, sans-serif; font-size: 12px; font-weight: 700; border-radius: 9999px; border: none; cursor: pointer; min-width: 52px; } .ds-newsletter__btn:hover { background: #B21C67; } .ds-newsletter__btn:focus-visible { outline: 3px solid #B21C67; outline-offset: 3px; } .ds-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }"
+    },
+    {
+      "name": "Handwrite Annotation",
+      "kind": "custom",
+      "description": "Caveat text that reveals via clip-path as if being written in real time. Always aria-hidden, always rotated, always protruding beyond its parent.",
+      "html": "<p class=\"ds-annotation ds-annotation--fast\" aria-hidden=\"true\">← my favourite this month ♡</p>",
+      "css": ".ds-annotation { font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; color: #C9347E; line-height: 1.35; clip-path: inset(0 100% -12% 0); -webkit-clip-path: inset(0 100% -12% 0); transition: clip-path 1.3s cubic-bezier(0.45,0.1,0.35,1), -webkit-clip-path 1.3s cubic-bezier(0.45,0.1,0.35,1); position: absolute; z-index: 10; pointer-events: none; } .ds-annotation.written { clip-path: inset(0 0% -12% 0); -webkit-clip-path: inset(0 0% -12% 0); } .ds-annotation--fast { transition-duration: 0.9s; } .ds-annotation--slow { transition-duration: 1.9s; } @media (prefers-reduced-motion: reduce) { .ds-annotation { clip-path: none !important; -webkit-clip-path: none !important; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Studio Notebook",
+    "overview": "Handmade Logic looks and feels like a beloved, well-used sketchbook: layered surfaces, colour tests at the edges, annotations in the margins, nothing too precious. The visual system carries the same honesty as the writing — imperfection is not a flaw to correct, it is the character to preserve. A slight rotation on a card, a handwritten note pointing at something, a watercolour wash that bleeds just past its container: these are features, not bugs.\n\nThe palette is warm and saturated but never slick. Signal Pink, Golden Hour, and Worn Sage sit on a cream ground that reads like unbleached paper rather than a web background. Every shadow is tinted toward Ink Plum, never cool grey.\n\nTypography is the workhorse. Lora carries the editorial weight; Nunito handles the UI without fuss; Caveat appears only where a real pen might. Motion is purposeful and unhurried.",
+    "keyCharacteristics": [
+      "Warm, imperfect, annotated — a working notebook, not a portfolio",
+      "Layered surfaces: dotted canvas background, watercolour washes, slight element rotations",
+      "Three-tier typography: Lora for authority, Nunito for clarity, Caveat strictly for personality",
+      "All shadows tinted with Ink Plum — never cool grey",
+      "Cards rest at slight angles; they straighten and lift on hover",
+      "Handwriting annotations reveal via clip-path sweep, as if written in real time"
+    ],
+    "rules": [
+      { "name": "The Warm Shadow Rule",       "body": "All shadows use rgba(42,24,37,...) — Ink Plum, not grey. A grey shadow on this palette reads as cold and disconnected. Prohibited.",                                                                   "section": "colors" },
+      { "name": "The No Pure Neutral Rule",   "body": "No #000, no #fff, no rgba(0,0,0,...). Every neutral is tinted toward the raspberry/plum hue family at low chroma.",                                                                                "section": "colors" },
+      { "name": "The Signal Pink Reserve Rule","body": "Signal Pink is used on 10–20% of any given screen surface. Its rarity is the point. Reach for Golden Hour for warmth without urgency; Studio Plum for weight without competition.",               "section": "colors" },
+      { "name": "The Caveat Fence Rule",      "body": "Caveat appears in annotations, captions, and asides — never as primary text for any interactive element. If an interaction relies on Caveat to communicate, that text belongs in Lora or Nunito.", "section": "typography" },
+      { "name": "The Italic Em Rule",         "body": "Within Lora headings, key words are wrapped in <em> and coloured Signal Pink or Worn Sage. This is the heading emphasis system — not bold, not underline, not size increase.",                     "section": "typography" },
+      { "name": "The Flat-at-Rest Rule",      "body": "Shadows respond to state, not decoration. A surface at rest carries only enough shadow to separate it from the layer below. Decorative heavy shadows at rest are prohibited.",                      "section": "elevation" },
+      { "name": "The Warm Tint Rule",         "body": "No shadow uses neutral grey (rgba(0,0,0,...)). All shadows carry Ink Plum (rgba(42,24,37,...)). A grey shadow is a sign something escaped the system.",                                            "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Ink Plum shadows (rgba(42,24,37,...)) for every drop shadow.",
+      "Do rotate cards and placed elements by 1–3° at rest.",
+      "Do restrict Caveat to annotations, captions, and aside text.",
+      "Do reserve Signal Pink for primary actions and heading emphasis.",
+      "Do open every major section with the badge pattern: Golden Hour pill + Nunito bold label + small SVG icon.",
+      "Do mark every Caveat annotation aria-hidden=\"true\".",
+      "Do treat prefers-reduced-motion as first-class.",
+      "Do tint every neutral toward the Ink Plum/raspberry family at low chroma."
+    ],
+    "donts": [
+      "Don't build a minimal tech aesthetic: no dark mode, no monospace body type, no developer-cool visual language.",
+      "Don't build a slick, corporate lifestyle surface: no polished wellness gradients, no DTC craft-brand photography, no flatlay beige-and-white minimalism.",
+      "Don't use maximalist competing elements — every decorative element earns its place.",
+      "Don't use Pinterest softness, Etsy flatlay minimalism, or stock-photo warmth.",
+      "Don't use border-left greater than 1px as a coloured accent stripe.",
+      "Don't use gradient text (background-clip: text).",
+      "Don't use glassmorphism decoratively.",
+      "Don't build identical card grids — vary column widths, rotation angles, and image heights.",
+      "Don't animate with bounce or elastic easing.",
+      "Don't use em dashes in UI copy.",
+      "Don't use Caveat for interactive or functional text."
+    ]
+  }
+}
