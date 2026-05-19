@@ -13,9 +13,9 @@ export default function PostsPage() {
       <Nav />
 
       <div className="w-full">
-        <main className="max-w-[1440px] mx-auto px-6 md:px-[90px] pt-16 pb-24 font-nunito">
+        <main className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 xl:px-[250px] min-[1600px]:px-[90px] pt-16 pb-24 font-nunito">
           {/* Header */}
-          <div className="mb-14">
+          <div className="w-full min-[1600px]:max-w-[960px] min-[1600px]:mx-auto mb-14">
             <div className="inline-flex items-center gap-2 mb-4">
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none">
                 <line x1="12" y1="3" x2="12" y2="21" stroke="#D88018" strokeWidth="2.5" strokeLinecap="round" />
@@ -31,7 +31,7 @@ export default function PostsPage() {
           </div>
 
           {/* Post list */}
-          <div className="flex flex-col gap-6 max-w-[860px]">
+          <div className="flex flex-col gap-6 w-full min-[1600px]:max-w-[960px] min-[1600px]:mx-auto">
             {posts.map((post) => (
               <Link
                 key={post.slug}

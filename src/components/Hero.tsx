@@ -46,8 +46,8 @@ export default function Hero() {
             Welcome to my{' '}
             <span className="inline-block relative mx-1 md:mx-3">
               <em className="text-[rgb(201,52,126)]">messy</em>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 14" preserveAspectRatio="none" className="absolute w-full h-[14px] -bottom-[6px] left-0">
-                <path d="M2,8 C40,2 80,12 120,6 C160,2 195,10 198,7" stroke="#D88018" strokeWidth="5" fill="none" strokeLinecap="round" />
+              <svg data-draw-svg="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 14" preserveAspectRatio="none" className="absolute w-full h-[14px] -bottom-[6px] left-0" style={{'--draw-len': '1'} as React.CSSProperties}>
+                <path pathLength="1" style={{transitionDelay: '0.3s'}} d="M2,8 C40,2 80,12 120,6 C160,2 195,10 198,7" stroke="#D88018" strokeWidth="5" fill="none" strokeLinecap="round" />
               </svg>
             </span>{' '}
             little
@@ -73,7 +73,7 @@ export default function Hero() {
                 <line x1="70" y1="30" x2="62" y2="36" stroke="#D88018" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </Link>
-            <p className="absolute -bottom-10 left-16 text-[rgb(216,128,24)] text-[20px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)'}}>
+            <p data-handwrite="true" data-handwrite-speed="fast" className="absolute -bottom-10 left-16 text-[rgb(216,128,24)] text-[20px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)', transitionDelay: '1.2s'}}>
               ↑ start here, friend
             </p>
           </div>
@@ -96,10 +96,10 @@ export default function Hero() {
                 <text x="19" y="11" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="8" fontWeight="700" fill="#C9347E" opacity="0.7">DRAFT</text>
               </g>
             </svg>
-            <p className="absolute bottom-[-22px] left-0 right-0 text-center text-[rgb(42,24,37)] text-[18px] font-semibold font-caveat opacity-55">✿ margot, illustration coming</p>
+            <p data-handwrite="true" data-handwrite-speed="fast" className="absolute bottom-[-22px] left-0 right-0 text-center text-[rgb(42,24,37)] text-[18px] font-semibold font-caveat opacity-55">✿ margot, illustration coming</p>
           </div>
           {/* Annotation */}
-          <p className="absolute top-6 -right-8 text-[rgb(201,52,126)] text-[26px] font-bold font-caveat leading-tight" style={{transform: 'matrix(0.994522, -0.104528, 0.104528, 0.994522, 0, 0)'}}>
+          <p data-handwrite="true" className="absolute top-6 -right-8 text-[rgb(201,52,126)] text-[26px] font-bold font-caveat leading-tight" style={{transform: 'matrix(0.994522, -0.104528, 0.104528, 0.994522, 0, 0)'}}>
             hi! that&apos;s me<br />
             <span className="text-[rgb(42,24,37)] text-[18px] font-semibold">(soon — drawn) ✿</span>
           </p>

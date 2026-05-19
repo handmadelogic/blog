@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="relative w-full overflow-hidden bg-[rgb(237,233,222)] text-[rgb(42,24,37)] px-6 md:px-14 py-16 md:py-24 font-nunito">
+    <section className="relative w-full overflow-hidden bg-[rgb(237,233,222)] text-[rgb(42,24,37)] px-6 md:px-[60px] py-16 md:py-24 font-nunito">
       {/* Decorative watercolor blobs */}
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="hidden md:block absolute -top-24 -right-24 w-[460px] h-[460px] pointer-events-none">
         <defs>
@@ -23,7 +23,7 @@ export default function About() {
         <path d="M30,100 C20,60 60,18 110,22 C160,26 188,60 184,110 C180,160 140,184 90,178 C50,172 38,140 30,100 Z" fill="url(#d-wash-E58FB8-about)" />
       </svg>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-14 max-w-[1180px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-14 max-w-[1320px] mx-auto">
 
         {/* Portrait — shows below text on mobile, left column on desktop */}
         <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
@@ -57,7 +57,7 @@ export default function About() {
               </div>
             </div>
             {/* Annotation */}
-            <p className="hidden md:block absolute -top-8 -left-2 text-[rgb(122,148,104)] text-[22px] font-bold font-caveat" style={{transform: 'matrix(0.990268, -0.139173, 0.139173, 0.990268, 0, 0)'}}>
+            <p data-handwrite="true" data-handwrite-speed="fast" className="hidden md:block absolute -top-8 -left-2 text-[rgb(122,148,104)] text-[22px] font-bold font-caveat" style={{transform: 'matrix(0.990268, -0.139173, 0.139173, 0.990268, 0, 0)'}}>
               ✿ hi, again
             </p>
             {/* Decorative SVGs */}
@@ -100,7 +100,7 @@ export default function About() {
           <p className="text-[rgb(90,61,82)] text-[17px] font-nunito leading-[1.7em] mb-6">
             This blog is where I write down what I&apos;m learning, in case it&apos;s useful to you — and so I stop forgetting which dye lot I bought in 2023.
           </p>
-          <p className="text-[rgb(201,52,126)] text-[22px] font-semibold font-caveat leading-[1.4em] mb-7">
+          <p data-handwrite="true" data-handwrite-speed="slow" className="text-[rgb(201,52,126)] text-[22px] font-semibold font-caveat leading-[1.4em] mb-7">
             p.s. yes, even the dovetail joints. especially those.
           </p>
 
@@ -108,7 +108,7 @@ export default function About() {
             Read the full story <span>→</span>
           </a>
 
-          <p className="hidden md:block absolute bottom-0 right-0 text-[rgb(216,128,24)] text-[22px] font-bold font-caveat" style={{transform: 'matrix(0.997564, 0.0697565, -0.0697565, 0.997564, 0, 0)'}}>
+          <p data-handwrite="true" data-handwrite-speed="fast" className="hidden md:block absolute bottom-0 right-0 text-[rgb(216,128,24)] text-[22px] font-bold font-caveat" style={{transform: 'matrix(0.997564, 0.0697565, -0.0697565, 0.997564, 0, 0)'}}>
             ✦ send pics of yours
           </p>
         </div>

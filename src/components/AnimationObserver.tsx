@@ -1,8 +1,11 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function AnimationObserver() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => {
@@ -16,9 +19,6 @@ export default function AnimationObserver() {
           if (el.hasAttribute('data-reveal')) {
             el.classList.add('revealed');
           }
-          if (el.hasAttribute('data-handwrite')) {
-            el.classList.add('written');
-          }
 
           io.unobserve(el);
         }
@@ -26,10 +26,21 @@ export default function AnimationObserver() {
       { threshold: 0.15 }
     );
 
-    const targets = document.querySelectorAll(
-      '[data-draw-svg], [data-draw], [data-reveal], [data-handwrite]'
-    );
+    const targets = document.querySelectorAll('[data-draw-svg], [data-draw], [data-reveal]');
     targets.forEach((el) => io.observe(el));
+
+    // Handwrite elements use threshold: 0 so they fire even inside overflow:hidden parents
+    const hwIo = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add('written');
+          hwIo.unobserve(entry.target);
+        }
+      },
+      { threshold: 0 }
+    );
+    document.querySelectorAll('[data-handwrite]').forEach((el) => hwIo.observe(el));
 
     // Handwrite-hover: trigger on parent pointer enter
     const hoverTargets = document.querySelectorAll<HTMLElement>('[data-handwrite-hover]');
@@ -44,13 +55,14 @@ export default function AnimationObserver() {
 
     return () => {
       io.disconnect();
+      hwIo.disconnect();
       hoverTargets.forEach((el) => {
         const parent = el.parentElement;
         const fn = hoverHandlers.get(el);
         if (parent && fn) parent.removeEventListener('pointerenter', fn);
       });
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

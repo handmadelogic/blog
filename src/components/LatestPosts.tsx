@@ -29,7 +29,7 @@ export default function LatestPosts() {
           <h2 className="font-bold font-lora leading-tight text-[rgb(42,24,37)]" style={{fontSize: 'clamp(2rem, 4vw, 3.5rem)'}}>
             Latest <em className="text-[rgb(201,52,126)]">posts</em> &amp; <em className="text-[rgb(122,148,104)]">process</em> notes
           </h2>
-          <p className="hidden md:block absolute -top-7 -left-2 text-[rgb(137,112,120)] text-[20px] font-semibold font-caveat" style={{transform: 'matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)'}}>✦ what I&apos;ve been up to</p>
+          <p data-handwrite="true" className="hidden md:block absolute -top-7 -left-2 text-[rgb(137,112,120)] text-[20px] font-semibold font-caveat" style={{transform: 'matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)'}}>✦ what I&apos;ve been up to</p>
         </div>
         <Link href="/posts" data-link="true" className="relative shrink-0 text-[rgb(42,24,37)] pb-1 text-[14px] font-bold font-nunito border-b-2 border-dashed border-[rgb(201,52,126)]">
           read everything →
@@ -42,7 +42,7 @@ export default function LatestPosts() {
         {/* Featured article */}
         <Link href="/posts/knitting-a-sweater">
         <article data-card-lift="true" className="relative cursor-pointer" style={{transform: 'matrix(0.999848, -0.0174524, 0.0174524, 0.999848, 0, 0)'}}>
-          <p className="hidden md:block absolute -top-2 -right-12 text-[rgb(201,52,126)] text-[22px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)'}}>← my favorite this month ♡</p>
+          <p data-handwrite="true" className="hidden md:block absolute -top-2 -right-12 text-[rgb(201,52,126)] text-[22px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)'}}>← my favorite this month ♡</p>
           <div className="bg-[rgb(255,250,235)] rounded-[12px] p-4" style={{boxShadow: 'rgba(42, 24, 37, 0.1) 0px 10px 30px 0px, rgba(42, 24, 37, 0.05) 0px 2px 6px 0px'}}>
             {/* Image area */}
             <div className="relative w-full h-[280px] md:h-[380px] overflow-hidden rounded-lg mb-0" style={{backgroundImage: 'linear-gradient(135deg, rgb(229, 143, 184) 0%, rgb(201, 52, 126) 100%)'}}>
@@ -141,7 +141,7 @@ export default function LatestPosts() {
           <Link key={card.title} href={card.href}>
           <article data-card-lift="true" className="relative cursor-pointer h-full" style={{transform: card.rotate}}>
             {card.annotation && (
-              <p className="hidden md:block absolute -top-2 -right-12 text-[rgb(122,148,104)] text-[22px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)'}}>
+              <p data-handwrite="true" data-handwrite-speed="fast" className="hidden md:block absolute -top-2 -right-12 text-[rgb(122,148,104)] text-[22px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)'}}>
                 {card.annotation}
               </p>
             )}

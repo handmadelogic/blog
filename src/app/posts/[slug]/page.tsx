@@ -194,7 +194,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <Nav />
 
       <div className="w-full">
-      <main className="max-w-[1440px] mx-auto px-6 md:px-[90px] xl:px-[120px] pt-12 pb-24">
+      <main className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 xl:px-[250px] min-[1600px]:px-[90px] pt-12 pb-24">
         {/* Back link */}
         <Link
           href="/posts"
@@ -211,7 +211,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         {/* Article — card sits on the dotted beige; quips escape via overflow:visible */}
         <article
           aria-labelledby="post-title"
-          className="relative max-w-[640px] xl:max-w-[700px] 2xl:max-w-[780px] mx-auto overflow-visible bg-[rgb(255,250,235)] rounded-[20px] px-8 md:px-12 py-10 md:py-12"
+          className="relative w-full min-[1600px]:max-w-[960px] min-[1600px]:mx-auto overflow-visible bg-[rgb(255,250,235)] rounded-[20px] px-8 md:px-12 py-10 md:py-12"
           style={{ boxShadow: 'rgba(42, 24, 37, 0.07) 0px 6px 24px 0px' }}
         >
           {/* Category */}

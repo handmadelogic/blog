@@ -8,13 +8,13 @@ const checklistItems = [
 
 export default function Workshop() {
   return (
-    <section className="relative w-full overflow-hidden bg-[rgba(181,197,165,0.333)] text-[rgb(42,24,37)] px-6 md:px-[90px] pt-16 md:pt-[80px] pb-16 md:pb-[90px] font-nunito">
+    <section className="relative w-full overflow-hidden bg-[rgba(181,197,165,0.333)] text-[rgb(42,24,37)] px-6 md:px-[60px] pt-16 md:pt-[80px] pb-16 md:pb-[90px] font-nunito">
       {/* Scalloped top edge */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 24" preserveAspectRatio="none" className="absolute -top-px left-0 w-full h-6 pointer-events-none">
         <path d="M0,12 C120,2 240,22 360,12 C480,2 600,22 720,12 C840,2 960,22 1080,12 C1200,2 1320,22 1440,12 L1440,0 L0,0 Z" fill="rgb(237,233,222)" />
       </svg>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] items-start gap-14 max-w-[1260px]">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] items-start gap-14 max-w-[1320px] mx-auto">
 
         {/* Left: intro + illustration */}
         <div className="relative">
@@ -54,7 +54,7 @@ export default function Workshop() {
 
             {/* Sticky note */}
             <div className="hidden sm:block absolute top-8 left-[200px] w-[220px] bg-[rgb(255,250,235)] px-[18px] py-[14px] rounded-[18px]" style={{boxShadow: 'rgba(42, 24, 37, 0.1) 0px 4px 14px 0px', transform: 'matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, 0)'}}>
-              <p className="text-[rgb(42,24,37)] text-[20px] font-semibold font-caveat leading-[26px]">
+              <p data-handwrite="true" data-handwrite-speed="slow" className="text-[rgb(42,24,37)] text-[20px] font-semibold font-caveat leading-[26px]">
                 honestly? mostly snack breaks at this point ✿
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function Workshop() {
 
         {/* Right: checklist card */}
         <div className="relative">
-          <p className="hidden lg:block absolute -top-6 right-0 text-[rgb(201,52,126)] text-[22px] font-bold font-caveat" style={{transform: 'matrix(0.994522, -0.104528, 0.104528, 0.994522, 0, 0)'}}>
+          <p data-handwrite="true" data-handwrite-speed="fast" className="hidden lg:block absolute -top-6 right-0 text-[rgb(201,52,126)] text-[22px] font-bold font-caveat" style={{transform: 'matrix(0.994522, -0.104528, 0.104528, 0.994522, 0, 0)'}}>
             stuck on this one ↓
           </p>
           <div className="bg-[rgb(255,250,235)] px-8 py-8 rounded-[20px]" style={{boxShadow: 'rgba(42, 24, 37, 0.08) 0px 14px 36px 0px'}}>
