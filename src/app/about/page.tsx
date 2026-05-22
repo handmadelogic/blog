@@ -239,24 +239,21 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="relative mt-5 overflow-hidden rounded-[14px]" style={{ aspectRatio: '16/9' }}>
-                <div
-                  className="absolute inset-0"
-                  style={{ background: 'linear-gradient(135deg, rgb(181,197,165) 0%, rgb(122,148,104) 100%)', opacity: 0.6 }}
-                  aria-hidden="true"
-                />
-                <img
-                  src="/images/sarah-studio.jpg"
-                  alt="Sarah's workbench with various craft projects in progress"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                />
-                <p
-                  className="absolute bottom-3 left-4 font-caveat text-[rgb(246,240,220)] text-[16px] font-semibold"
-                  style={{ textShadow: '0 1px 4px rgba(42,24,37,0.4)' }}
-                  aria-hidden="true"
-                >
-                  ✦ the studio, in controlled chaos
+              <div
+                className="relative mt-5 rounded-[14px] flex flex-col items-center justify-center gap-3 p-5"
+                style={{
+                  aspectRatio: '16/9',
+                  border: '2px dashed rgba(122,148,104,0.45)',
+                  background: 'rgba(122,148,104,0.05)',
+                }}
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 48 48" width="28" height="28" fill="none" aria-hidden="true">
+                  <circle cx="24" cy="24" r="20" stroke="rgba(122,148,104,0.45)" strokeWidth="2" strokeDasharray="5 4" />
+                  <path d="M16,24 L22,30 L32,18" stroke="rgba(122,148,104,0.45)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <p className="font-caveat text-[rgba(122,148,104,0.7)] text-[16px] font-semibold text-center leading-snug">
+                  cartoon<br />goes here ✿
                 </p>
               </div>
             </div>
