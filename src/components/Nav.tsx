@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -29,7 +30,9 @@ export default function Nav() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-14 flex items-center justify-between">
         {/* Logo — links to home */}
         <Link href="/" className="flex items-center gap-3">
-          <svg aria-hidden="true" viewBox="0 0 60 60" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <Image src="/handmadelogiclogo.svg" alt="Handmade Logic" width={160} height={40} priority />
+          {/* <svg aria-hidden="true" viewBox="0 0 60 60" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" />
             <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" style={{transform: 'matrix(0.707107, 0.707107, -0.707107, 0.707107, 30, -12.4264)'}} />
             <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" style={{transform: 'matrix(0, 1, -1, 0, 60, 0)'}} />
@@ -43,7 +46,7 @@ export default function Nav() {
           <div>
             <div className="text-[22px] font-bold font-lora leading-[22px] tracking-[-0.11px] text-[rgb(42,24,37)]">Handmade Logic</div>
             <div className="text-[15px] font-semibold font-caveat text-[rgb(178,28,103)] mt-[2px]">a journal of makes ✿</div>
-          </div>
+          </div> */}
         </Link>
 
         {/* Desktop nav links */}

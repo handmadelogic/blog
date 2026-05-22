@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import {
   Nunito,
-  Caveat,
   Fraunces,
   Lora,
   Bricolage_Grotesque,
@@ -12,7 +12,7 @@ import "./globals.css";
 import AnimationObserver from "@/components/AnimationObserver";
 
 const nunito = Nunito({ subsets: ["latin"], variable: "--nf-nunito" });
-const caveat = Caveat({ subsets: ["latin"], variable: "--nf-caveat" });
+const caveat = localFont({ src: "../../public/fonts/SarahHandRegular.woff2", variable: "--nf-caveat" });
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--nf-fraunces" });
 const lora = Lora({ subsets: ["latin"], variable: "--nf-lora" });
 const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--nf-bricolage" });

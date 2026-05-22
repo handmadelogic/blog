@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import FooterSubscribeForm from './FooterSubscribeForm';
+import Image from 'next/image';
 
 const socialLinks = [
   { name: 'Instagram', href: '#' },
@@ -31,20 +32,7 @@ export default function Footer({ waveColor = 'rgb(241,236,220)' }: { waveColor?:
 
           {/* Col 1: Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <svg viewBox="0 0 60 60" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#F0B652" strokeWidth="1.8" />
-                <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#F0B652" strokeWidth="1.8" style={{transform: 'matrix(0.707107, 0.707107, -0.707107, 0.707107, 30, -12.4264)'}} />
-                <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#F0B652" strokeWidth="1.8" style={{transform: 'matrix(0, 1, -1, 0, 60, 0)'}} />
-                <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#F0B652" strokeWidth="1.8" style={{transform: 'matrix(-0.707107, 0.707107, -0.707107, -0.707107, 72.4264, 30)'}} />
-                <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#F0B652" strokeWidth="1.8" style={{transform: 'matrix(-1, 0, 0, -1, 60, 60)'}} />
-                <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#F0B652" strokeWidth="1.8" style={{transform: 'matrix(-0.707107, -0.707107, 0.707107, -0.707107, 30, 72.4264)'}} />
-                <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#F0B652" strokeWidth="1.8" style={{transform: 'matrix(0, -1, 1, 0, 0, 60)'}} />
-                <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#F0B652" strokeWidth="1.8" style={{transform: 'matrix(0.707107, -0.707107, 0.707107, 0.707107, -12.4264, 30)'}} />
-                <circle cx="30" cy="30" r="5" fill="#C9347E" stroke="#F0B652" strokeWidth="1.8" />
-              </svg>
-              <span className="text-[rgb(246,240,220)] text-[22px] font-bold font-lora">Handmade Logic</span>
-            </div>
+            <Image src="/handmadelogiclogo2.svg" alt="Handmade Logic" width={160} height={40} priority />
             <p className="text-[rgb(240,182,82)] text-[22px] font-semibold font-caveat mb-4">kept slowly, with care ✿</p>
             <p className="max-w-[380px] text-[rgba(246,240,220,0.7)] italic font-lora leading-[1.6em] mb-6">
               A little craft journal on the internet. Posts published most Tuesdays, sometimes more often if I cannot help myself.
