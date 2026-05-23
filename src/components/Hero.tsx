@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -26,7 +27,7 @@ export default function Hero() {
       </svg>
 
       {/* Main layout grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] xl:grid-cols-[844px_360px] items-center gap-10 xl:gap-14 max-w-[1260px] mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] xl:grid-cols-[760px_460px] items-end gap-10 xl:gap-14 max-w-315 mx-auto">
 
         {/* Left: text content */}
         <div className="relative">
@@ -79,29 +80,23 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: illustration placeholder — hidden on mobile */}
-        <div className="hidden lg:block relative mt-4">
-          {/* Glow */}
-          <div className="absolute -top-5 -left-5 w-[360px] h-[360px] rounded-full opacity-50 pointer-events-none" style={{backgroundImage: 'radial-gradient(circle, rgb(240, 182, 82) 0%, rgb(181, 197, 165) 50%, rgba(0, 0, 0, 0) 80%)'}} />
+        {/* Right: illustration — hidden on mobile */}
+        <div className="hidden lg:flex flex-col items-center relative">
           {/* Portrait SVG */}
-          <div className="relative w-[280px] h-[336px] mx-10">
-            <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" className="w-[280px] h-[336px]">
-              <rect x="6" y="6" width="188" height="208" rx="14" fill="none" stroke="#2A1825" strokeWidth="1.5" strokeDasharray="6,5" opacity="0.35" />
-              <ellipse cx="124" cy="34" rx="14" ry="10" fill="#C9347E" opacity="0.55" />
-              <ellipse cx="100" cy="80" rx="48" ry="52" fill="#C9347E" opacity="0.45" />
-              <path d="M40,210 C44,170 64,148 100,148 C136,148 156,170 160,210 Z" fill="#D88018" opacity="0.5" />
-              <path d="M82,90 C90,98 110,98 118,90" stroke="#2A1825" strokeWidth="1.5" fill="none" opacity="0.35" strokeLinecap="round" />
-              <g style={{transform: 'matrix(0.978148, -0.207912, 0.207912, 0.978148, 150, 184)'}}>
-                <rect x="0" y="0" width="38" height="16" rx="2" fill="none" stroke="#C9347E" strokeWidth="1.2" opacity="0.7" />
-                <text x="19" y="11" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="8" fontWeight="700" fill="#C9347E" opacity="0.7">DRAFT</text>
-              </g>
-            </svg>
-            <p data-handwrite="true" data-handwrite-speed="fast" className="absolute bottom-[-22px] left-0 right-0 text-center text-[rgb(42,24,37)] text-[18px] font-semibold font-caveat opacity-55">✿ margot, illustration coming</p>
-          </div>
-          {/* Annotation */}
-          <p data-handwrite="true" className="absolute top-6 -right-8 z-10 text-[rgb(201,52,126)] text-[26px] font-bold font-caveat leading-tight" style={{transform: 'matrix(0.994522, -0.104528, 0.104528, 0.994522, 0, 0)'}}>
-            hi! that&apos;s me<br />
-            <span className="text-[rgb(42,24,37)] text-[18px] font-semibold">(illustration coming) ✿</span>
+          <Image
+            src="/sarahwavinghi.svg"
+            alt="Drawing of Sarah waving hi"
+            width={460}
+            height={540}
+            className="w-full h-auto"
+          />
+          {/* Annotation — below the cartoon, not overlapping */}
+          <p
+            data-handwrite="true"
+            className="mt-3 self-end mr-6 text-[rgb(201,52,126)] text-[26px] font-bold font-caveat leading-tight"
+            style={{transform: 'matrix(0.994522, -0.104528, 0.104528, 0.994522, 0, 0)'}}
+          >
+            hi! that&apos;s me
           </p>
           {/* Decorative craft SVGs */}
           <svg viewBox="0 0 60 60" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" data-draw-svg="true" className="absolute bottom-0 -left-5" style={{transform: 'matrix(0.978148, -0.207912, 0.207912, 0.978148, 0, 0)'}}>

@@ -32,21 +32,6 @@ export default function Nav() {
         <Link href="/" className="flex items-center gap-3">
 
       <Image src="/handmadelogiclogo.svg" alt="Handmade Logic" width={160} height={40} priority />
-          {/* <svg aria-hidden="true" viewBox="0 0 60 60" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" />
-            <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" style={{transform: 'matrix(0.707107, 0.707107, -0.707107, 0.707107, 30, -12.4264)'}} />
-            <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" style={{transform: 'matrix(0, 1, -1, 0, 60, 0)'}} />
-            <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" style={{transform: 'matrix(-0.707107, 0.707107, -0.707107, -0.707107, 72.4264, 30)'}} />
-            <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" style={{transform: 'matrix(-1, 0, 0, -1, 60, 60)'}} />
-            <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" style={{transform: 'matrix(-0.707107, -0.707107, 0.707107, -0.707107, 30, 72.4264)'}} />
-            <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" style={{transform: 'matrix(0, -1, 1, 0, 0, 60)'}} />
-            <ellipse cx="30" cy="14" rx="5" ry="9" fill="#F0B652" stroke="#2A1825" strokeWidth="1.8" style={{transform: 'matrix(0.707107, -0.707107, 0.707107, 0.707107, -12.4264, 30)'}} />
-            <circle cx="30" cy="30" r="5" fill="#C9347E" stroke="#2A1825" strokeWidth="1.8" />
-          </svg>
-          <div>
-            <div className="text-[22px] font-bold font-lora leading-[22px] tracking-[-0.11px] text-[rgb(42,24,37)]">Handmade Logic</div>
-            <div className="text-[15px] font-semibold font-caveat text-[rgb(178,28,103)] mt-[2px]">a journal of makes ✿</div>
-          </div> */}
         </Link>
 
         {/* Desktop nav links */}

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export const metadata = { title: 'About · Handmade Logic' };
 
@@ -217,45 +218,17 @@ export default function AboutPage() {
 
             {/* Photos */}
             <div className="relative order-2 lg:order-1" data-reveal>
-              <div className="relative overflow-hidden rounded-[20px]" style={{ aspectRatio: '4/5' }}>
-                <div
-                  className="absolute inset-0"
-                  style={{ background: 'linear-gradient(160deg, rgb(240,182,82) 0%, rgb(229,143,184) 55%, rgb(201,52,126) 100%)', opacity: 0.55 }}
-                  aria-hidden="true"
-                />
-                <img
-                  src="/images/sarah-portrait.jpg"
-                  alt="Sarah in her studio, covered in some form of craft material"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  loading="eager"
-                />
-                <div className="absolute bottom-5 left-0 right-0 flex justify-center pointer-events-none" aria-hidden="true">
-                  <div
-                    className="bg-[rgba(246,240,220,0.88)] px-4 py-[7px] rounded-full"
-                    style={{ transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)' }}
-                  >
-                    <span className="font-caveat text-[rgb(201,52,126)] text-[17px] font-bold">✿ photo coming (i look busy)</span>
-                  </div>
-                </div>
+              <div className="relative mt-5 rounded-[14px] overflow-hidden">
+                <Image src="/sarahbrainstorm.svg" alt="Drawing of Sarah brainstorming" width={400} height={400} className="w-full h-auto" />
               </div>
-
-              <div
-                className="relative mt-5 rounded-[14px] flex flex-col items-center justify-center gap-3 p-5"
-                style={{
-                  aspectRatio: '16/9',
-                  border: '2px dashed rgba(122,148,104,0.45)',
-                  background: 'rgba(122,148,104,0.05)',
-                }}
-                aria-hidden="true"
+              <p
+                data-handwrite="true"
+                data-handwrite-speed="slow"
+                className="mt-3 text-[rgb(90,61,82)] text-[16px] font-semibold font-caveat leading-snug text-center"
+                style={{ transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)' }}
               >
-                <svg viewBox="0 0 48 48" width="28" height="28" fill="none" aria-hidden="true">
-                  <circle cx="24" cy="24" r="20" stroke="rgba(122,148,104,0.45)" strokeWidth="2" strokeDasharray="5 4" />
-                  <path d="M16,24 L22,30 L32,18" stroke="rgba(122,148,104,0.45)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <p className="font-caveat text-[rgba(122,148,104,0.7)] text-[16px] font-semibold text-center leading-snug">
-                  cartoon<br />goes here ✿
-                </p>
-              </div>
+                look at me, so full of hope and ideas, untouched by fate's cruel claws
+              </p>
             </div>
 
             {/* Story text */}
@@ -302,26 +275,16 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Cartoon placeholder — third column, lg only */}
-            <div className="hidden lg:flex order-3 flex-col items-center pt-16" data-reveal data-reveal-delay="2" aria-hidden="true">
-              <div
-                className="w-full rounded-[16px] flex flex-col items-center justify-center gap-3 p-5"
-                style={{
-                  aspectRatio: '3/4',
-                  border: '2px dashed rgba(201,52,126,0.35)',
-                  background: 'rgba(201,52,126,0.04)',
-                }}
+            {/* Cartoon — third column, lg only */}
+            <div className="hidden lg:flex order-3 flex-col items-center pt-16" data-reveal data-reveal-delay="2">
+              <Image src="/sarahprocess.svg" alt="Sarah's reel of emotions during the creative process" width={400} height={350} className="w-full h-auto" />
+              <p
+                data-handwrite="true"
+                data-handwrite-speed="slow"
+                className="mt-3 text-[rgb(90,61,82)] text-[16px] font-semibold font-caveat leading-snug text-center"
+                style={{ transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)' }}
               >
-                <svg viewBox="0 0 48 48" width="32" height="32" fill="none" aria-hidden="true">
-                  <circle cx="24" cy="24" r="20" stroke="rgba(201,52,126,0.4)" strokeWidth="2" strokeDasharray="5 4" />
-                  <path d="M16,24 L22,30 L32,18" stroke="rgba(201,52,126,0.4)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <p className="font-caveat text-[rgba(201,52,126,0.6)] text-[16px] font-semibold text-center leading-snug">
-                  cartoon<br />goes here ✿
-                </p>
-              </div>
-              <p className="font-caveat text-[rgba(42,24,37,0.35)] text-[13px] text-center mt-3 leading-snug">
-                swap with<br />your SVG
+                accurate re-enactment of my emotions during my process
               </p>
             </div>
 
@@ -455,7 +418,7 @@ export default function AboutPage() {
             </div>
 
             {/* Family cartoon placeholder — centered, with annotation tucked beside it */}
-            <div className="relative mb-12 max-w-[540px] mx-auto" data-reveal data-reveal-delay="1">
+            <div className="relative mb-12 max-w-[450px] mx-auto" data-reveal data-reveal-delay="1">
               {/* Handwrite annotation — sits just outside the top-right corner of the cartoon */}
               <p
                 data-handwrite="true"
@@ -466,37 +429,7 @@ export default function AboutPage() {
               >
                 my biggest fans ✿
               </p>
-              <div
-                className="w-full rounded-[20px] flex flex-col items-center justify-center gap-4 py-10 px-6"
-                style={{
-                  aspectRatio: '4/3',
-                  border: '2px dashed rgba(201,52,126,0.35)',
-                  background: 'rgba(201,52,126,0.04)',
-                }}
-                aria-hidden="true"
-              >
-                <svg viewBox="0 0 64 48" width="48" height="36" fill="none" aria-hidden="true">
-                  {/* stick family hint */}
-                  <circle cx="10" cy="12" r="5" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" />
-                  <line x1="10" y1="17" x2="10" y2="34" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <line x1="4" y1="22" x2="16" y2="22" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <line x1="10" y1="34" x2="5" y2="44" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <line x1="10" y1="34" x2="15" y2="44" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <circle cx="32" cy="12" r="5" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" />
-                  <line x1="32" y1="17" x2="32" y2="34" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <line x1="26" y1="22" x2="38" y2="22" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <line x1="32" y1="34" x2="27" y2="44" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <line x1="32" y1="34" x2="37" y2="44" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <circle cx="54" cy="14" r="4" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" />
-                  <line x1="54" y1="18" x2="54" y2="32" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <line x1="49" y1="23" x2="59" y2="23" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <line x1="54" y1="32" x2="50" y2="44" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                  <line x1="54" y1="32" x2="58" y2="44" stroke="rgba(201,52,126,0.4)" strokeWidth="1.8" strokeLinecap="round" />
-                </svg>
-                <p className="font-caveat text-[rgba(201,52,126,0.6)] text-[18px] font-semibold text-center leading-snug">
-                  family cartoon<br />goes here ✿
-                </p>
-              </div>
+              <Image src="/familia.svg" alt="Drawing of Sarah's family" width={400} height={40} />
             </div>
 
             {/* Two text blocks */}
