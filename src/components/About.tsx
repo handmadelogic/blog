@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -28,39 +29,12 @@ export default function About() {
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-14 max-w-[1320px] mx-auto">
 
         {/* Portrait — shows below text on mobile, left column on desktop */}
-        <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
+        <div className="order-2 lg:order-1 flex justify-center">
           <div className="relative w-[280px] sm:w-[320px] h-[280px] sm:h-[320px]">
-            {/* Sunburst lines */}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" className="absolute -inset-10 w-[calc(100%+80px)] h-[calc(100%+80px)]">
-              {Array.from({length: 24}, (_, i) => {
-                const angle = i * 15;
-                const rad = (angle * Math.PI) / 180;
-                const cos = Math.cos(rad), sin = Math.sin(rad);
-                return (
-                  <line key={i} x1="200" y1="200" x2="200" y2="40" stroke="#D88018" strokeWidth="2" strokeLinecap="round" opacity="0.35"
-                    style={{transform: `matrix(${cos}, ${sin}, ${-sin}, ${cos}, ${200 - 200*cos + 200*sin}, ${200 - 200*sin - 200*cos})`}} />
-                );
-              })}
-            </svg>
-            {/* Circle portrait */}
-            <div className="relative w-full h-full overflow-hidden bg-[rgb(255,250,235)] rounded-full border-4 border-[rgb(246,240,220)]" style={{boxShadow: 'rgba(42, 24, 37, 0.14) 0px 16px 40px 0px'}}>
-              <div className="absolute inset-3 rounded-full flex items-center justify-center" style={{backgroundImage: 'linear-gradient(rgb(240, 182, 82) 0%, rgb(229, 143, 184) 100%)'}}>
-                <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" className="w-[85%] h-[85%]">
-                  <rect x="6" y="6" width="188" height="208" rx="14" fill="none" stroke="#2A1825" strokeWidth="1.5" strokeDasharray="6,5" opacity="0.35" />
-                  <ellipse cx="124" cy="34" rx="14" ry="10" fill="#C9347E" opacity="0.55" />
-                  <ellipse cx="100" cy="80" rx="48" ry="52" fill="#C9347E" opacity="0.45" />
-                  <path d="M40,210 C44,170 64,148 100,148 C136,148 156,170 160,210 Z" fill="#5C2D52" opacity="0.5" />
-                  <path d="M82,90 C90,98 110,98 118,90" stroke="#2A1825" strokeWidth="1.5" fill="none" opacity="0.35" strokeLinecap="round" />
-                  <g style={{transform: 'matrix(0.978148, -0.207912, 0.207912, 0.978148, 150, 184)'}}>
-                    <rect x="0" y="0" width="38" height="16" rx="2" fill="none" stroke="#C9347E" strokeWidth="1.2" opacity="0.7" />
-                    <text x="19" y="11" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="8" fontWeight="700" fill="#C9347E" opacity="0.7">DRAFT</text>
-                  </g>
-                </svg>
-              </div>
-            </div>
+             <Image src="/miniaboutme.svg" alt="Mini Sarah holding a hammer and a woodplank" width={400} height={350} className="w-full h-auto" />
             {/* Annotation */}
             <p data-handwrite="true" data-handwrite-speed="fast" className="hidden md:block absolute -top-8 -left-2 text-[rgb(122,148,104)] text-[22px] font-bold font-caveat" style={{transform: 'matrix(0.990268, -0.139173, 0.139173, 0.990268, 0, 0)'}}>
-              ✿ hi, again
+              ✿ winging it ✿
             </p>
             {/* Decorative SVGs */}
             <svg viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg" data-draw-svg="true" className="absolute top-2 -right-2" style={{transform: 'matrix(0.965926, 0.258819, -0.258819, 0.965926, 0, 0)'}}>

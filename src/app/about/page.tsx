@@ -102,20 +102,11 @@ export default function AboutPage() {
                     aria-hidden="true"
                   />
                   <img
-                    src="/images/sarah-portrait.jpg"
+                    src="/profilePic.jpg"
                     alt="Sarah, the maker behind Handmade Logic"
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="eager"
                   />
-                  {/* Placeholder hint */}
-                  <div className="absolute inset-0 flex items-end justify-center pb-3 pointer-events-none" aria-hidden="true">
-                    <span
-                      className="font-caveat text-[rgba(246,240,220,0.75)] text-[15px] font-semibold"
-                      style={{ textShadow: '0 1px 4px rgba(42,24,37,0.45)' }}
-                    >
-                      (photo coming)
-                    </span>
-                  </div>
                 </div>
 
                 {/* Caption */}
@@ -219,16 +210,8 @@ export default function AboutPage() {
             {/* Photos */}
             <div className="relative order-2 lg:order-1" data-reveal>
               <div className="relative mt-5 rounded-[14px] overflow-hidden">
-                <Image src="/sarahbrainstorm.svg" alt="Drawing of Sarah brainstorming" width={400} height={400} className="w-full h-auto" />
+                <Image src="/sarahcollage.png" alt="Collage of sarah doing different crafts" width={320} height={800} className="w-full h-auto" />
               </div>
-              <p
-                data-handwrite="true"
-                data-handwrite-speed="slow"
-                className="mt-3 text-[rgb(90,61,82)] text-[16px] font-semibold font-caveat leading-snug text-center"
-                style={{ transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)' }}
-              >
-                look at me, so full of hope and ideas, untouched by fate's cruel claws
-              </p>
             </div>
 
             {/* Story text */}

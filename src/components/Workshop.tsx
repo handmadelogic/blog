@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const checklistItems = [
   { emoji: '🪢', color: 'rgba(181,86,62,0.2)', title: 'Macramé wall hanging', note: 'mostly knots. occasional doubt.', progress: 32, barColor: 'rgb(181,86,62)' },
   { emoji: '💡', color: 'rgba(122,148,104,0.2)', title: 'Stained-glass nightlight', note: 'finished, except the cord. need a cord.', progress: 78, barColor: 'rgb(122,148,104)' },
@@ -39,18 +41,7 @@ export default function Workshop() {
 
           {/* Small portrait + sticky note */}
           <div className="relative w-[180px] h-[216px]">
-            <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" className="w-[180px] h-[216px]">
-              <rect x="6" y="6" width="188" height="208" rx="14" fill="none" stroke="#2A1825" strokeWidth="1.5" strokeDasharray="6,5" opacity="0.35" />
-              <ellipse cx="124" cy="34" rx="14" ry="10" fill="#7A9468" opacity="0.55" />
-              <ellipse cx="100" cy="80" rx="48" ry="52" fill="#7A9468" opacity="0.45" />
-              <path d="M40,210 C44,170 64,148 100,148 C136,148 156,170 160,210 Z" fill="#D88018" opacity="0.5" />
-              <path d="M82,90 C90,98 110,98 118,90" stroke="#2A1825" strokeWidth="1.5" fill="none" opacity="0.35" strokeLinecap="round" />
-              <g style={{transform: 'matrix(0.978148, -0.207912, 0.207912, 0.978148, 150, 184)'}}>
-                <rect x="0" y="0" width="38" height="16" rx="2" fill="none" stroke="#7A9468" strokeWidth="1.2" opacity="0.7" />
-                <text x="19" y="11" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="8" fontWeight="700" fill="#7A9468" opacity="0.7">DRAFT</text>
-              </g>
-            </svg>
-            <p className="absolute bottom-[-22px] left-0 right-0 text-center text-[rgb(42,24,37)] text-[18px] font-semibold font-caveat opacity-55">✿ me, in the studio</p>
+            <Image src="/sarahworkshop.svg" alt="Sarah's reel of emotions during the creative process" width={400} height={350} className="w-full h-auto" />
 
             {/* Sticky note */}
             <div className="hidden sm:block absolute top-8 left-[200px] w-[220px] bg-[rgb(255,250,235)] px-[18px] py-[14px] rounded-[18px]" style={{boxShadow: 'rgba(42, 24, 37, 0.1) 0px 4px 14px 0px', transform: 'matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, 0)'}}>
