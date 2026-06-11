@@ -239,7 +239,7 @@ export default function AboutPage() {
                   I&apos;m Sarah. Naturally curious, perpetually mid-project, and constitutionally unable to read the words &ldquo;that&apos;s hard to do&rdquo; without immediately wanting to find out for myself. Whether or not I succeed is a separate question. I try anyway.
                 </p>
                 <p>
-                  I operate on a philosophy I generously call optimism. Every project starts with &ldquo;how hard can it be?&rdquo; The answer is almost always &ldquo;harder than that.&rdquo; I finish anyway. Sometimes it takes a few attempts. Sometimes the sweater becomes a scarf. I&apos;ve made peace with this.
+                  I operate on a philosophy I generously call optimism. Every project starts with &ldquo;how hard can it be?&rdquo; The answer is almost always &ldquo;harder than that.&rdquo; I somehow manage to finish anyway. Sometimes it takes a few attempts. Sometimes the sweater becomes a scarf. I&apos;ve made peace with this.
                 </p>
                 <p>
                   What keeps me coming back is the friction. The trials, the re-dos, the moments where something doesn&apos;t work and you have to sit with it and figure out why. I love the journey far more than the finished object. The moment a project is done, I&apos;m already thinking about what I&apos;d do differently.
@@ -427,14 +427,14 @@ export default function AboutPage() {
                   <h3 className="font-bold font-lora text-[20px] text-[rgb(42,24,37)]">The boys</h3>
                 </div>
                 <p className="text-[rgb(90,61,82)] text-[17px] font-nunito leading-[1.75em] mb-5">
-                  Two young boys, full speed, zero filter. They have learned that when I say &ldquo;just a quick project,&rdquo; the living room is changing for the next three weeks. They are adapting remarkably well and occasionally bring me found sticks, which I accept gratefully.
+                  All gas. No brakes. Maybe a little too much gas if you know what I mean (they are little boys after all). My homegrown and mostly cooperative little sidekicks that have accompanied me to countless trips to the hardware store. They always impress me with their ability to make even more fun out of my creative chaos. I will never cease to admire how they make even the most mundane things an adventure.
                 </p>
                 <p
                   data-handwrite="true"
                   data-handwrite-speed="slow"
                   className="text-[rgb(122,148,104)] text-[20px] font-semibold font-caveat leading-tight"
                 >
-                  the sticks are on my desk. i love them.
+                 ✿ easily my best creation
                 </p>
               </div>
 

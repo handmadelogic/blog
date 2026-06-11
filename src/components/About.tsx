@@ -71,10 +71,10 @@ export default function About() {
           </h2>
 
           <p className="text-[rgb(90,61,82)] text-[17px] font-nunito leading-[1.7em] mb-4">
-            I&apos;m Sarah. Self-taught everything-er. I live in a small place with two small people and one of those squeaky studio chairs you never get around to fixing.
+            I&apos;m Sarah. Self-taught everything-er. I live in Calgary, Alberta with my husband and our two little roomates.
           </p>
           <p className="text-[rgb(90,61,82)] text-[17px] font-nunito leading-[1.7em] mb-6">
-            This blog is where I write down what I&apos;m learning, in case it&apos;s useful to you, and so I stop forgetting which dye lot I bought in 2023.
+            This blog is where I write down what I&apos;m learning during my hyperfixation of the week, in case it&apos;s useful to you, and so I stop forgetting which dye lot I bought in 2023.
           </p>
           <p data-handwrite="true" data-handwrite-speed="slow" className="text-[rgb(201,52,126)] text-[22px] font-semibold font-caveat leading-[1.4em] mb-7">
             p.s. yes, even the dovetail joints. especially those.

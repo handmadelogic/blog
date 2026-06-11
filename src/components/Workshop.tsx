@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
 const checklistItems = [
-  { emoji: '🪢', color: 'rgba(181,86,62,0.2)', title: 'Macramé wall hanging', note: 'mostly knots. occasional doubt.', progress: 32, barColor: 'rgb(181,86,62)' },
-  { emoji: '💡', color: 'rgba(122,148,104,0.2)', title: 'Stained-glass nightlight', note: 'finished, except the cord. need a cord.', progress: 78, barColor: 'rgb(122,148,104)' },
-  { emoji: '🪵', color: 'rgba(216,128,24,0.2)', title: 'Walnut spice rack', note: 'sanded twice. unclear why.', progress: 55, barColor: 'rgb(216,128,24)' },
-  { emoji: '🎨', color: 'rgba(201,52,126,0.2)', title: 'Watercolour florals series', note: 'small hands involved. calling it collaborative.', progress: 18, barColor: 'rgb(201,52,126)' },
-  { emoji: '🏡', color: 'rgba(92,45,82,0.2)', title: 'Cottage shed paint job', note: 'magenta won. always magenta.', progress: 88, barColor: 'rgb(92,45,82)' },
+  { emoji: '🧵', color: 'rgba(181,86,62,0.2)', title: 'Punch Needle Tote Bag', note: 'my right hand has cramped.', progress: 52, barColor: 'rgb(181,86,62)' },
+  { emoji: '🪡', color: 'rgba(122,148,104,0.2)', title: 'Knitting/Crochet needle case', note: 'is wishing it progress?', progress: 2, barColor: 'rgb(122,148,104)' },
+  { emoji: '🪵', color: 'rgba(216,128,24,0.2)', title: 'Family Command Centre', note: 'the code is there, need to make the frame', progress: 65, barColor: 'rgb(216,128,24)' },
+  { emoji: '🎞️', color: 'rgba(201,52,126,0.2)', title: 'Family Photo Album 2025', note: 'yes. 2025 you read that right.', progress: 85, barColor: 'rgb(201,52,126)' },
+  { emoji: '🏡', color: 'rgba(92,45,82,0.2)', title: 'Fix up Garden vents', note: 'is this crafty? idk.', progress: 88, barColor: 'rgb(92,45,82)' },
 ];
 
 export default function Workshop() {

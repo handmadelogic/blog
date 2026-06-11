@@ -235,7 +235,7 @@ export default function FreebiesPage() {
                 more landing here as I make them ✿
               </p>
               <p className="text-[rgb(137,112,120)] text-[14px] font-nunito mt-1">
-                Files are for personal use. Share the link, not the file.
+                Files are for personal use. Pretty please share the link, not the file.
               </p>
             </div>
 
