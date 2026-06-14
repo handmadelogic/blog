@@ -75,7 +75,7 @@ export default function Hero() {
               </svg>
             </Link>
             <p data-handwrite="true" data-handwrite-speed="fast" className="absolute -bottom-10 left-16 z-10 text-[rgb(216,128,24)] text-[20px] font-semibold font-caveat" style={{transform: 'matrix(0.997564, -0.0697565, 0.0697565, 0.997564, 0, 0)', transitionDelay: '1.2s'}}>
-              ↑ start here, friend
+              start here!!
             </p>
           </div>
         </div>
